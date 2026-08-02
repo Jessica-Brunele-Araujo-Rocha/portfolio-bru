@@ -1,21 +1,31 @@
 // Main JavaScript para o Grimório Místico de Jessica Brunele
+// ==========================================
+// 🔮 FUNÇÕES GLOBAIS (Acessíveis pelo HTML)
+// ==========================================
 
-// FUNÇÃO PARA ALTERNAR ENTRE AS ABAS DO ORÁCULO
+// 1. Alternar entre as Abas (Tarot x Gerador)
 function alternarAba(abaId, btn) {
-  // Esconde todas as abas
-  document.getElementById('tarotTab').style.display = 'none';
-  document.getElementById('spellTab').style.display = 'none';
+  const tarotTab = document.getElementById('tarotTab');
+  const spellTab = document.getElementById('spellTab');
 
-  // Remove classe ativa de todos os botões
+  if (tarotTab && spellTab) {
+    tarotTab.style.display = 'none';
+    spellTab.style.display = 'none';
+  }
+
   const btns = document.querySelectorAll('.tab-btn');
   btns.forEach(b => b.classList.remove('active'));
 
-  // Mostra a aba selecionada e ativa o botão
-  document.getElementById(abaId).style.display = 'block';
-  btn.classList.add('active');
+  const abaSelecionada = document.getElementById(abaId);
+  if (abaSelecionada) {
+    abaSelecionada.style.display = 'block';
+  }
+  if (btn) {
+    btn.classList.add('active');
+  }
 }
 
-// 🔮 BANCO DE CARTAS DO TAROT DA ESTRATÉGIA DIGITAL (Fora do DOMContentLoaded para acesso global)
+// 2. Banco e Lógica do Tarot
 const baralhoTarot = [
   {
     nome: "🃏 O Alquimista de Conteúdo",
@@ -34,13 +44,10 @@ const baralhoTarot = [
   }
 ];
 
-// Função chamada diretamente pelo HTML via onclick="revelarCarta(n)"
 function revelarCarta(index) {
   const cartas = document.querySelectorAll('.tarot-card');
-  
   if (!cartas || cartas.length === 0) return;
 
-  // Virar todas as cartas
   cartas.forEach((card, i) => {
     card.classList.add('flipped');
     const backElement = document.getElementById(`back-${i}`);
@@ -52,7 +59,6 @@ function revelarCarta(index) {
     }
   });
 
-  // Exibir o painel com o resultado
   const resultado = baralhoTarot[index];
   const titleElem = document.getElementById('card-title');
   const meaningElem = document.getElementById('card-meaning');
@@ -65,7 +71,7 @@ function revelarCarta(index) {
   }
 }
 
-// BANCO DE FEITIÇOS DE CONTEÚDO
+// 3. Banco e Lógica do Gerador de Feitiços
 const feiticosConteudo = [
   {
     categoria: "🔮 FEITIÇO DE AUTORIDADE",
@@ -73,7 +79,7 @@ const feiticosConteudo = [
   },
   {
     categoria: "✨ POÇÃO DE ENGAJAMENTO",
-    texto: "A verdade não contada sobre [sua área de atuação]: O que ninguém te avisa antes de começar."
+    texto: "A verdade não contada sobre sua área: O que ninguém te avisa antes de começar."
   },
   {
     categoria: "🌙 FEITIÇO DE CONVERSÃO",
@@ -96,11 +102,9 @@ function conjurarFeitico() {
 
   if (!display || !categoryElem || !textElem) return;
 
-  // Sorteia um feitiço aleatório
   const randomIndex = Math.floor(Math.random() * feiticosConteudo.length);
   const feitico = feiticosConteudo[randomIndex];
 
-  // Efeito de transição
   display.style.opacity = 0;
   display.style.display = "block";
 
@@ -112,12 +116,16 @@ function conjurarFeitico() {
   }, 150);
 }
 
+
+// ==========================================
+// 📜 EVENTOS AO CARREGAR A PÁGINA
+// ==========================================
 document.addEventListener("DOMContentLoaded", () => {
   // Hit Counter
   const hitCounter = document.getElementById("hitCounter");
   let count = localStorage.getItem("gothic_visit_count");
   if (!count) {
-    count = 1337; // Número místico inicial
+    count = 1337;
   } else {
     count = parseInt(count) + 1;
   }
@@ -132,10 +140,9 @@ document.addEventListener("DOMContentLoaded", () => {
     yearEl.textContent = new Date().getFullYear();
   }
 
-  // Oracle / Easter Egg
+  // Easter Egg
   const insertCoinBtn = document.getElementById("insertCoin");
   const eggMsg = document.getElementById("eggMsg");
-  
   const oracleQuotes = [
     "🔮 'Sob a luz da Lua Cheia, novos processos organizados florescerão.'",
     "🐈‍⬛ 'O Gato Preto sussurra: Seus dados estão protegidos e em ordem.'",
@@ -156,7 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Countdown to Y2K38
+  // Countdown Y2K38
   const countdownEl = document.getElementById("countdown");
   function updateCountdown() {
     if (!countdownEl) return;
@@ -177,8 +184,10 @@ document.addEventListener("DOMContentLoaded", () => {
     countdownEl.textContent = `${days}D ${String(hours).padStart(2, '0')}H ${String(minutes).padStart(2, '0')}M ${String(seconds).padStart(2, '0')}S`;
   }
 
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
+  if (countdownEl) {
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  }
 
   // Grimório / Guestbook
   const gbForm = document.getElementById("gbForm");
@@ -186,7 +195,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const gbMsg = document.getElementById("gbMsg");
   const gbList = document.getElementById("gbList");
 
-  // Load initial entries
   const initialEntries = [
     { name: "Morgana, a Sábia", msg: "Que a luz da lua ilumine sempre a sua gestão e seu caminho!" },
     { name: "O Gato Guardião 🐈‍⬛", msg: "Aprovado por todos os felinos da casa. Vibe impecável!" }
@@ -221,8 +229,8 @@ document.addEventListener("DOMContentLoaded", () => {
         storedEntries.unshift({ name: nameVal, msg: msgVal });
         localStorage.setItem("gothic_guestbook", JSON.stringify(storedEntries));
         renderGuestbook();
-        gbName.value = "";
-        gbMsg.value = "";
+        if (gbName) gbName.value = "";
+        if (gbMsg) gbMsg.value = "";
       }
     });
   }
