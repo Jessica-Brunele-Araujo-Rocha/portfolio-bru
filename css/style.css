@@ -186,7 +186,6 @@ h1.gothic-title {
   margin-bottom: 12px;
 }
 
-/* AJUSTE DO MENU / ORÁCULO DE NAVEGAÇÃO */
 .menu ul {
   list-style: none;
   padding: 0;
@@ -208,7 +207,6 @@ h1.gothic-title {
   white-space: nowrap;
 }
 
-/* Responsivo para celular */
 @media (max-width: 600px) {
   .menu ul {
     grid-template-columns: 1fr !important;
@@ -837,110 +835,7 @@ h1.gothic-title {
 }
 
 /* ===================================================
-   ✦ ALQUIMIAS EM DESTAQUE (SEÇÃO DE CASES DE SUCESSO)
-   =================================================== */
-.case-card {
-  background: rgba(16, 0, 43, 0.75);
-  border: 1px solid var(--accent-gold);
-  border-radius: 12px;
-  padding: 1.8rem;
-  margin-bottom: 2rem;
-  box-shadow: var(--glow-purple), 0 4px 20px rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(4px);
-}
-
-.case-header {
-  border-bottom: 1px dashed rgba(247, 208, 112, 0.3);
-  padding-bottom: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.case-badge {
-  background: var(--accent-deep-violet);
-  color: var(--accent-gold);
-  font-family: var(--font-title);
-  font-size: 0.75rem;
-  padding: 4px 12px;
-  border-radius: 12px;
-  border: 1px solid var(--accent-purple);
-  letter-spacing: 1px;
-}
-
-.case-title {
-  color: var(--accent-gold);
-  font-family: var(--font-title);
-  font-size: 1.4rem;
-  margin-top: 12px;
-  margin-bottom: 0;
-  text-shadow: var(--glow-gold);
-}
-
-.case-body {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.8rem;
-  align-items: start;
-}
-
-@media (max-width: 768px) {
-  .case-body {
-    grid-template-columns: 1fr;
-  }
-}
-
-.case-details p {
-  color: var(--text-main);
-  font-size: 1.1rem;
-  margin-bottom: 1.2rem;
-  line-height: 1.5;
-}
-
-.case-details strong {
-  color: var(--accent-gold);
-}
-
-.case-caption-box {
-  background: rgba(8, 4, 18, 0.85);
-  border-left: 3px solid var(--accent-gold);
-  padding: 1.2rem;
-  border-radius: 6px;
-  font-size: 1rem;
-  color: var(--text-muted);
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-.case-caption-box p {
-  margin-top: 8px;
-  margin-bottom: 0;
-  font-style: italic;
-  font-size: 1.05rem;
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-}
-
-.case-img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  border: 1px solid rgba(157, 78, 221, 0.5);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-  object-fit: cover;
-}
-
-.case-img:hover {
-  transform: scale(1.08);
-  border-color: var(--accent-gold);
-  box-shadow: var(--glow-gold);
-  z-index: 5;
-}
-
-/* ===================================================
-   ✦ ESTRUTURA DOS CARDS RE TRÁTEIS (ACCORDION) & CARROSSEL
+   ✦ ALQUIMIAS EM DESTAQUE & ACCORDION (CARDS RE TRÁTEIS)
    =================================================== */
 .cases-container {
   display: flex;
@@ -948,7 +843,6 @@ h1.gothic-title {
   gap: 1.5rem;
 }
 
-/* Card Retrátil */
 .case-accordion {
   background: rgba(16, 0, 43, 0.85);
   border: 1px solid var(--accent-gold);
@@ -962,23 +856,23 @@ h1.gothic-title {
   box-shadow: var(--glow-gold), 0 6px 25px rgba(0, 0, 0, 0.8);
 }
 
-/* Cabeçalho Clicável */
-.case-summary {
-  padding: 1.2rem 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  list-style: none;
+/* CABEÇALHO CLICÁVEL DO CASE (summary) */
+summary.case-summary {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 1.2rem 1.5rem !important;
+  cursor: pointer !important;
+  list-style: none !important;
   background: rgba(24, 10, 36, 0.9);
   user-select: none;
 }
 
-.case-summary::-webkit-details-marker {
-  display: none;
+summary.case-summary::-webkit-details-marker {
+  display: none !important;
 }
 
-.case-summary:hover {
+summary.case-summary:hover {
   background: rgba(36, 0, 70, 0.9);
 }
 
@@ -986,6 +880,54 @@ h1.gothic-title {
   display: flex;
   flex-direction: column;
   gap: 6px;
+}
+
+.case-badge {
+  background: var(--accent-deep-violet);
+  color: var(--accent-gold);
+  font-family: var(--font-title);
+  font-size: 0.75rem;
+  padding: 4px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--accent-purple);
+  letter-spacing: 1px;
+  width: fit-content;
+}
+
+.case-title {
+  color: var(--accent-gold);
+  font-family: var(--font-title);
+  font-size: 1.4rem;
+  margin: 0;
+  text-shadow: var(--glow-gold);
+}
+
+/* MINIATURA EM CIMA DO BOTÃO "VER CASE" */
+.summary-preview {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 6px !important;
+  margin-left: 15px !important;
+}
+
+.preview-thumb {
+  display: block !important;
+  width: 55px !important;
+  height: 55px !important;
+  min-width: 55px !important;
+  min-height: 55px !important;
+  object-fit: cover !important;
+  border-radius: 6px !important;
+  border: 1px solid var(--accent-gold) !important;
+  box-shadow: 0 0 10px rgba(247, 208, 112, 0.4) !important;
+  transition: transform 0.3s ease, border-color 0.3s ease !important;
+}
+
+.case-summary:hover .preview-thumb {
+  transform: scale(1.1) !important;
+  border-color: var(--accent-magenta) !important;
+  box-shadow: var(--glow-gold) !important;
 }
 
 .accordion-icon {
@@ -997,6 +939,7 @@ h1.gothic-title {
   border-radius: 6px;
   white-space: nowrap;
   transition: all 0.3s ease;
+  display: inline-block !important;
 }
 
 .case-accordion[open] .accordion-icon {
@@ -1004,7 +947,7 @@ h1.gothic-title {
   color: #fff;
 }
 
-/* Conteúdo Expandido */
+/* CONTEÚDO EXPANDIDO DO CASE */
 .case-body {
   padding: 1.5rem;
   border-top: 1px dashed rgba(247, 208, 112, 0.3);
@@ -1027,6 +970,10 @@ h1.gothic-title {
   line-height: 1.5;
 }
 
+.case-details strong {
+  color: var(--accent-gold);
+}
+
 .case-caption-box {
   background: rgba(8, 4, 18, 0.85);
   border-left: 3px solid var(--accent-gold);
@@ -1036,7 +983,14 @@ h1.gothic-title {
   color: var(--text-muted);
 }
 
-/* CARROSSEL INSTAGRAM HORIZONTAL (FORÇADO) */
+.case-caption-box p {
+  margin-top: 8px;
+  margin-bottom: 0;
+  font-style: italic;
+  font-size: 1.05rem;
+}
+
+/* CARROSSEL INSTAGRAM HORIZONTAL */
 .case-gallery {
   display: flex;
   justify-content: center;
@@ -1097,41 +1051,11 @@ h1.gothic-title {
   z-index: 10;
 }
 
-/* ===================================================
-   ✦ MINIATURA DE PREVIEW (AMOSTRA VISUAL) NO ACCORDION
-   =================================================== */
-.case-summary {
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
-  padding: 1.2rem 1.5rem !important;
-}
-
-.summary-preview {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  gap: 8px !important;
-}
-
-.preview-thumb {
-  width: 60px !important;
-  height: 60px !important;
-  object-fit: cover !important;
-  border-radius: 8px !important;
-  border: 1px solid var(--accent-gold) !important;
-  box-shadow: 0 0 10px rgba(247, 208, 112, 0.4) !important;
-  transition: transform 0.3s ease, border-color 0.3s ease !important;
-}
-
-.case-summary:hover .preview-thumb {
-  transform: scale(1.1) !important;
-  border-color: var(--accent-magenta) !important;
-  box-shadow: var(--glow-gold) !important;
-}
+.nav-left { left: 8px; }
+.nav-right { right: 8px; }
 
 @media (max-width: 600px) {
-  .case-summary {
+  summary.case-summary {
     flex-direction: column !important;
     align-items: flex-start !important;
     gap: 15px !important;
@@ -1140,8 +1064,6 @@ h1.gothic-title {
     flex-direction: row !important;
     width: 100% !important;
     justify-content: space-between !important;
+    margin-left: 0 !important;
   }
 }
-
-.nav-left { left: 8px; }
-.nav-right { right: 8px; }
