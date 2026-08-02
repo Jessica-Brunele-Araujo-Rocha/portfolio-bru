@@ -430,3 +430,12 @@ summary.case-summary::-webkit-details-marker {
   summary.case-summary { flex-direction: column; align-items: flex-start; gap: 15px; }
   .menu ul { grid-template-columns: 1fr; }
 }
+
+/* BLINDAGEM ABSOLUTA: IMPEDE QUALQUER IMAGEM FORA DO LUGAR NO ACORDEÃO */
+summary.case-summary img,
+.case-summary img,
+.summary-info img {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
