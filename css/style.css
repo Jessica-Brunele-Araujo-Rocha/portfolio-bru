@@ -673,3 +673,54 @@ summary.case-summary::-webkit-details-marker {
   .case-body { grid-template-columns: 1fr; }
   .menu ul { grid-template-columns: 1fr; }
 }
+
+/* ===================================================
+   AJUSTES FINOS PARA VISUALIZAÇÃO MOBILE (CELULAR)
+   =================================================== */
+@media (max-width: 768px) {
+  /* Alinha o cabeçalho do case no celular de forma vertical e organizada */
+  summary.case-summary {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+    padding: 1rem !important;
+  }
+
+  /* Deixa a miniatura em cima centralizada e o título logo abaixo */
+  summary.case-summary > div:first-child {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center;
+    width: 100%;
+  }
+
+  .case-preview-img {
+    margin-bottom: 5px;
+  }
+
+  .summary-info {
+    align-items: center !important;
+    text-align: center;
+  }
+
+  /* Ajusta o botão "CONJURAR CASE" para ocupar a largura correta no celular */
+  .accordion-icon {
+    width: 100% !important;
+    text-align: center;
+    margin-top: 5px;
+  }
+
+  /* Corrige o empilhamento dos botões de contato (WhatsApp, LinkedIn, etc.) */
+  .btn-group, .btn-row {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  .retro-btn {
+    width: 100% !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+}
