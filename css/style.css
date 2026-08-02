@@ -292,7 +292,7 @@ h1.gothic-title {
 }
 
 /* ===================================================
-   ✦ ACCORDION DE CASES & MINIATURAS (RESTRITO)
+   ACCORDION DE CASES & BLINDAGEM DE IMAGEM
    =================================================== */
 .cases-container {
   display: flex;
@@ -353,6 +353,7 @@ summary.case-summary::-webkit-details-marker {
   padding: 6px 12px;
   border-radius: 6px;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .case-body {
@@ -363,7 +364,7 @@ summary.case-summary::-webkit-details-marker {
   gap: 1.8rem;
 }
 
-/* CARROSSEL INSTAGRAM (IMAGENS EXPANDIDAS) */
+/* CARROSSEL INSTAGRAM */
 .case-gallery {
   display: flex;
   justify-content: center;
@@ -423,7 +424,7 @@ summary.case-summary::-webkit-details-marker {
 .nav-left { left: 8px; }
 .nav-right { right: 8px; }
 
-/* Oráculo Interativo & Tarot Tabs (Blindado) */
+/* ORÁCULO INTERATIVO & TAROT */
 .oracle-tabs {
   display: flex;
   justify-content: center;
@@ -546,7 +547,7 @@ summary.case-summary::-webkit-details-marker {
   margin-bottom: 8px;
 }
 
-/* Guestbook Form */
+/* GUESTBOOK FORM */
 .gb-form {
   display: flex;
   flex-direction: column;
@@ -563,6 +564,7 @@ summary.case-summary::-webkit-details-marker {
   border-radius: 6px;
   font-family: var(--font-body);
   font-size: 1.1rem;
+  width: 100%;
 }
 
 .gb-form input:focus, .gb-form textarea:focus {
@@ -586,7 +588,7 @@ summary.case-summary::-webkit-details-marker {
   border-radius: 0 6px 6px 0;
 }
 
-/* Moon Strip & Footer */
+/* MOON STRIP & FOOTER */
 .moon-strip {
   display: flex;
   justify-content: center;
@@ -649,8 +651,13 @@ summary.case-summary::-webkit-details-marker {
   color: var(--accent-gold);
 }
 
-/* Responsive */
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .case-body { grid-template-columns: 1fr; }
   .menu ul { grid-template-columns: 1fr; }
+}
+
+/* BLINDAGEM ANTI-VAZAMENTO DE IMAGEM NO CABEÇALHO DO ACORDEÃO */
+summary.case-summary img {
+  display: none !important;
 }
