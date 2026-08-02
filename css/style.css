@@ -676,3 +676,30 @@ summary.case-summary::-webkit-details-marker {
   box-shadow: var(--glow-purple);
   display: block;
 }
+
+/* ===================================================
+   MINIATURA DE CAPA NOS CARDS FECHADOS
+   =================================================== */
+.case-summary {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 15px !important;
+  padding: 1.2rem 1.5rem !important;
+}
+
+.case-preview-img {
+  display: flex !important;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.case-preview-img img {
+  width: 65px !important;
+  height: 65px !important;
+  object-fit: cover !important;
+  border-radius: 6px !important;
+  border: 1px solid var(--accent-gold) !important;
+  box-shadow: var(--glow-purple) !important;
+  display: block !important;
+}
