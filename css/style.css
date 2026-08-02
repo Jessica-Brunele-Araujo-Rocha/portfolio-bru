@@ -276,6 +276,7 @@ h1.gothic-title {
   padding: 8px 16px;
   border-radius: 6px;
   text-decoration: none;
+  display: inline-block;
 }
 
 .job-list {
@@ -365,20 +366,24 @@ summary.case-summary::-webkit-details-marker {
 }
 
 /* MINIATURA DE CAPA NOS CARDS FECHADOS */
-.case-preview-img {
-  display: flex !important;
+.case-preview-wrapper {
+  display: flex;
   align-items: center;
+  gap: 15px;
+}
+
+.case-preview-img {
   flex-shrink: 0;
 }
 
 .case-preview-img img {
-  width: 65px !important;
-  height: 65px !important;
-  object-fit: cover !important;
-  border-radius: 6px !important;
-  border: 1px solid var(--accent-gold) !important;
-  box-shadow: var(--glow-purple) !important;
-  display: block !important;
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid var(--accent-gold);
+  box-shadow: var(--glow-purple);
+  display: block;
 }
 
 /* CARROSSEL INSTAGRAM */
@@ -668,59 +673,63 @@ summary.case-summary::-webkit-details-marker {
   color: var(--accent-gold);
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .case-body { grid-template-columns: 1fr; }
-  .menu ul { grid-template-columns: 1fr; }
-}
-
 /* ===================================================
-   AJUSTES FINOS PARA VISUALIZAÇÃO MOBILE (CELULAR)
+   RESPONSIVO E AJUSTES MOBILE (CELULAR)
    =================================================== */
 @media (max-width: 768px) {
-  /* Alinha o cabeçalho do case no celular de forma vertical e organizada */
+  .case-body { 
+    grid-template-columns: 1fr; 
+  }
+  
+  .menu ul { 
+    grid-template-columns: 1fr; 
+  }
+
+  /* Organiza o cabeçalho do case no celular de forma limpa */
   summary.case-summary {
     flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 12px !important;
+    align-items: stretch !important;
+    gap: 15px !important;
     padding: 1rem !important;
   }
 
-  /* Deixa a miniatura em cima centralizada e o título logo abaixo */
-  summary.case-summary > div:first-child {
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center;
+  .case-preview-wrapper {
+    flex-direction: row;
+    align-items: center;
     width: 100%;
   }
 
-  .case-preview-img {
-    margin-bottom: 5px;
+  .case-title {
+    font-size: 1.15rem !important;
   }
 
-  .summary-info {
-    align-items: center !important;
-    text-align: center;
-  }
-
-  /* Ajusta o botão "CONJURAR CASE" para ocupar a largura correta no celular */
+  /* O botão "CONJURAR CASE" ocupa a largura total embaixo no celular */
   .accordion-icon {
     width: 100% !important;
     text-align: center;
-    margin-top: 5px;
+    display: block;
   }
 
-  /* Corrige o empilhamento dos botões de contato (WhatsApp, LinkedIn, etc.) */
-  .btn-group, .btn-row {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 10px !important;
-    width: 100% !important;
+  /* Organiza perfeitamente os botões da seção Sobre no mobile */
+  .btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .btn-row {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-top: 0 !important;
   }
 
   .retro-btn {
     width: 100% !important;
     text-align: center !important;
+    display: block !important;
     box-sizing: border-box !important;
   }
 }
