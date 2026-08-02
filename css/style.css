@@ -186,14 +186,33 @@ h1.gothic-title {
   margin-bottom: 12px;
 }
 
+/* AJUSTE DO MENU / ORÁCULO DE NAVEGAÇÃO */
 .menu ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  flex-wrap: wrap;
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 12px 20px !important;
+  justify-items: center;
+  align-items: center;
+}
+
+.menu ul li {
+  width: 100%;
+  text-align: center;
+}
+
+.menu ul li a {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* Responsivo para celular */
+@media (max-width: 600px) {
+  .menu ul {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 .menu a {
