@@ -750,8 +750,8 @@ summary.case-summary::-webkit-details-marker {
 }
 
 /* ===================================================
-   CURSOR DE MORCEGO NO HOVER
+   CURSOR MÍSTICO NO HOVER
    =================================================== */
 a, button, summary, .tarot-card, .insert-coin, .retro-btn, .tab-btn {
-  cursor: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiI+PHRleHQgeD0iMCIgeT0iMjQiIGZvbnQtc2l6ZT0iMjIiPjxiYXRjb2RlPC90ZXh0Pjwvc3ZnPg=="), pointer !important;
+  cursor: url("https://api.iconify.design/noto:bat.svg") 16 16, pointer !important;
 }
