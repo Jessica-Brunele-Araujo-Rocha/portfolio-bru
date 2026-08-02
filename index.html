@@ -100,7 +100,7 @@
     <article class="job">
       <h3>01 ✦ Desenvolvendo o Conceito</h3>
       <p class="job-desc">
-        Crio ideias e conceitos visuais perfeitamente alinhados ao direcionamento estratégico da sua marca.
+        Crio ideias e conceitos visuais perfectamente alinhados ao direcionamento estratégico da sua marca.
       </p>
     </article>
 
@@ -263,11 +263,14 @@
 <section id="guestbook" class="panel guestbook">
   <h2 class="section-title">📜 Grimório de Visitas 📜</h2>
   <p class="gb-intro">Deixe seu feedback, parceria ou mensagem de conexão gravada neste livro místico! 📜🔮</p>
-  <form id="gbForm" class="gb-form">
-    <input type="text" id="gbName" placeholder="🦋 Seu nome ou Título Místico 🦋" required>
-    <textarea id="gbMsg" placeholder="📜 Escreva sua mensagem ou feitiço aqui..." required></textarea>
+  
+  <form id="gbForm" class="gb-form" action="https://formspree.io/f/mqervnep" method="POST">
+    <input type="text" name="nome" id="gbName" placeholder="🦋 Seu nome ou Título Místico 🦋" required>
+    <input type="tel" name="whatsapp" id="gbPhone" placeholder="📱 WhatsApp com DDD (Ex: 27999999999)" required>
+    <textarea name="mensagem" id="gbMsg" placeholder="📜 Escreva sua mensagem ou feitiço aqui..." required></textarea>
     <button type="submit" class="retro-btn">✦ SELEI MINHA ASSINATURA ✦</button>
   </form>
+
   <ul class="gb-list" id="gbList"></ul>
 </section>
 
