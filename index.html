@@ -6,9 +6,9 @@
 <title>✦ BRU ★ Estrategista Digital & Social Media ✦</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Pirata+One&family=VT323&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="CSS/style.css">
 </head>
-  
+
 <body>
 
 <!-- Fundo Estrelado Místico & Névoa -->
@@ -64,7 +64,7 @@
 
   <div class="about-card">
     <div class="photo-frame">
-      <img src="assets/foto-jessica.png" alt="BRU - Estrategista Digital" id="profilePhoto">
+      <img src="ativos/foto-jessica.png" alt="BRU - Estrategista Digital" id="profilePhoto">
       <div class="frame-moon-badge">🌙</div>
     </div>
 
@@ -88,7 +88,7 @@
   </div>
 </section>
 
-  <!-- PROCESSO CRIATIVO / ALQUIMIA DE CRIAÇÃO -->
+<!-- PROCESSO CRIATIVO / ALQUIMIA DE CRIAÇÃO -->
 <section id="process" class="panel">
   <h2 class="section-title">✦ Processo Criativo ✦</h2>
   <p class="gb-intro" style="text-align: center; margin-bottom: 2rem;">É assim que a mágica acontece na prática: 🔮</p>
@@ -205,6 +205,22 @@
   <ul class="gb-list" id="gbList"></ul>
 </section>
 
+<!-- TRILHA MÍSTICA DO YOUTUBE -->
+<div class="audio-player" style="text-align: center; margin: 2rem 0;">
+  <p style="font-size: 0.9rem; margin-bottom: 0.5rem; color: #d4af37;">🎵 Trilha Mística da Página:</p>
+  
+  <iframe 
+    width="300" 
+    height="80" 
+    src="https://www.youtube.com/embed/B_HSa1dEL9s?enablejsapi=1" 
+    title="Trilha Sonora Mística" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen 
+    style="border-radius: 10px; filter: invert(0.9) hue-rotate(180deg); opacity: 0.85;">
+  </iframe>
+</div>
+
 <footer class="site-footer">
   <p>🌙 FILHA DA LUA & ESTRATEGISTA 🖤</p>
   <p>© <span id="year"></span> BRU · Estratégia, Conteúdo & Design em HTML/CSS · Feito para todas as fases da lua.</p>
@@ -214,29 +230,6 @@
     <span class="badge">🔮 100% WITCHCORE</span>
   </div>
 </footer>
-
-<script src="js/main.js"></script>
-
- <!-- TOCADOR DE ÁUDIO MÍSTICO COM PLAY AUTOMÁTICO AO INTERAGIR -->
-<div class="audio-player" style="text-align: center; margin: 2rem 0;">
-  <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">🎵 Trilha Mística da Página:</p>
-  <audio id="bg-musica" controls loop style="filter: invert(1); opacity: 0.8; height: 35px;">
-    <source src="https://files.catbox.moe/u81q07.mp3" type="audio/mpeg">
-    Seu navegador não suporta o elemento de áudio.
-  </audio>
-</div>
-
-<script>
-  // Tenta iniciar o áudio no primeiro clique do visitante na página
-  document.addEventListener('click', function() {
-    const audio = document.getElementById('bg-musica');
-    if (audio && audio.paused) {
-      audio.play().catch(function(error) {
-        console.log("Autoplay bloqueado pelo navegador até interagir.");
-      });
-    }
-  }, { once: true });
-</script>
 
 <script src="js/main.js"></script>
 
