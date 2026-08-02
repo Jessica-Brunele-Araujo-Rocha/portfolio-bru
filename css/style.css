@@ -661,3 +661,23 @@ summary.case-summary::-webkit-details-marker {
 summary.case-summary img {
   display: none !important;
 }
+
+/* ===================================================
+   MINIATURA DE CAPA NOS CARDS FECHADOS
+   =================================================== */
+.case-summary {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.case-preview-img img {
+  width: 65px;
+  height: 65px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid var(--accent-gold);
+  box-shadow: var(--glow-purple);
+  display: block;
+}
