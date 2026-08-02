@@ -1,5 +1,7 @@
 // Main JavaScript para o Grimório Místico de Jessica Brunele
 
+// Main JavaScript para o Grimório Místico de Jessica Brunele
+
 // ==========================================
 // 🔮 FUNÇÕES GLOBAIS (Acessíveis pelo HTML)
 // ==========================================
@@ -117,6 +119,29 @@ function conjurarFeitico() {
   }, 150);
 }
 
+// 4. Contagem Regressiva para a Próxima Lua Cheia (28 de Agosto de 2026)
+function atualizarContagemLua() {
+  // Formato numérico universal compatível com todos os navegadores e celulares
+  const dataAlvo = new Date(2026, 7, 28, 4, 18, 0).getTime(); 
+  const agora = new Date().getTime();
+  const diferenca = dataAlvo - agora;
+
+  const elementoContador = document.getElementById('countdown');
+  if (!elementoContador) return;
+
+  if (diferenca <= 0) {
+    elementoContador.innerHTML = "🌕 LUA CHEIA EM SEU ÁPICE 🌕";
+    return;
+  }
+
+  const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+  const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
+  const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
+
+  elementoContador.innerHTML = `${dias}d ${horas}h ${minutos}m ${segundos}s`;
+}
+
 
 // ==========================================
 // 📜 EVENTOS AO CARREGAR A PÁGINA
@@ -164,31 +189,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Countdown Y2K38
-  const countdownEl = document.getElementById("countdown");
-  function updateCountdown() {
-    if (!countdownEl) return;
-    const targetDate = new Date("2038-01-19T03:14:07Z").getTime();
-    const now = new Date().getTime();
-    const distance = targetDate - now;
-
-    if (distance < 0) {
-      countdownEl.textContent = "O BUG CHEGOU!";
-      return;
-    }
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    countdownEl.textContent = `${days}D ${String(hours).padStart(2, '0')}H ${String(minutes).padStart(2, '0')}M ${String(seconds).padStart(2, '0')}S`;
-  }
-
-  if (countdownEl) {
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-  }
+  // Inicializa a Contagem da Lua Cheia em tempo real
+  atualizarContagemLua();
+  setInterval(atualizarContagemLua, 1000);
 
   // Grimório / Guestbook
   const gbForm = document.getElementById("gbForm");
@@ -210,7 +213,6 @@ document.addEventListener("DOMContentLoaded", () => {
     storedEntries.forEach(entry => {
       const li = document.createElement("li");
       li.className = "gb-item";
-      // Exibe apenas o nome e a mensagem publicamente na página (preservando a privacidade do telefone)
       li.innerHTML = `<div class="gb-item-author">✦ ${escapeHtml(entry.name)}:</div><p class="gb-item-text">"${escapeHtml(entry.msg)}"</p>`;
       gbList.appendChild(li);
     });
@@ -243,7 +245,6 @@ document.addEventListener("DOMContentLoaded", () => {
           });
 
           if (response.ok) {
-            // Salva no localStorage e renderiza na tela
             storedEntries.unshift({ name: nameVal, msg: msgVal });
             localStorage.setItem("gothic_guestbook", JSON.stringify(storedEntries));
             renderGuestbook();
@@ -262,29 +263,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-
-// Contagem Regressiva em tempo real para a Próxima Lua Cheia (28 de Agosto de 2026)
-function atualizarContagemLua() {
-  const dataAlvo = new Date('2026-08-28T04:18:00Z').getTime();
-  const agora = new Date().getTime();
-  const diferenca = dataAlvo - agora;
-
-  const elementoContador = document.getElementById('countdown');
-  if (!elementoContador) return;
-
-  if (diferenca <= 0) {
-    elementoContador.innerHTML = "🌕 LUA CHEIA EM SEU ÁPICE 🌕";
-    return;
-  }
-
-  const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
-  const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
-  const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
-
-  elementoContador.innerHTML = `${dias}d ${horas}h ${minutos}m ${segundos}s`;
-}
-
-// Executa e atualiza a cada 1 segundo
-setInterval(atualizarContagemLua, 1000);
-atualizarContagemLua();
