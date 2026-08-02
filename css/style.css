@@ -686,28 +686,6 @@ h1.gothic-title {
 }
 
 .tarot-result-box {
-  background: rgba(24, 10, 36, 0.9);
-  border: 1px solid #d4af37;
-  border-radius: 12px;
-  padding: 1.5rem;
-  max-width: 500px;
-  margin: 0 auto;
-  animation: fadeIn 0.5s ease;
-}
-
-.tarot-result-box h3 {
-  color: #d4af37;
-  margin-bottom: 0.5rem;
-  font-family: 'Cinzel Decorative', serif;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* AJUSTE DO BOTÃO E PAINEL DO TAROT */
-.tarot-result-box {
   background: rgba(24, 10, 36, 0.95);
   border: 1px solid #d4af37;
   border-radius: 12px;
@@ -716,6 +694,13 @@ h1.gothic-title {
   margin: 1.5rem auto 0 auto;
   box-sizing: border-box;
   text-align: center;
+  animation: fadeIn 0.5s ease;
+}
+
+.tarot-result-box h3 {
+  color: #d4af37;
+  margin-bottom: 0.5rem;
+  font-family: 'Cinzel Decorative', serif;
 }
 
 .tarot-result-box .result-action {
@@ -726,12 +711,17 @@ h1.gothic-title {
 
 .tarot-result-box a.retro-btn {
   display: inline-block;
-  white-space: normal; /* Permite quebrar linha em telas menores */
+  white-space: normal;
   max-width: 100%;
   padding: 0.8rem 1.2rem;
   font-size: 0.85rem;
   line-height: 1.3;
   height: auto;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* GERADOR DE FEITIÇOS */
@@ -844,4 +834,107 @@ h1.gothic-title {
 @keyframes fadeInTab {
   from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===================================================
+   ✦ ALQUIMIAS EM DESTAQUE (SEÇÃO DE CASES DE SUCESSO)
+   =================================================== */
+.case-card {
+  background: rgba(16, 0, 43, 0.75);
+  border: 1px solid var(--accent-gold);
+  border-radius: 12px;
+  padding: 1.8rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--glow-purple), 0 4px 20px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+}
+
+.case-header {
+  border-bottom: 1px dashed rgba(247, 208, 112, 0.3);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.case-badge {
+  background: var(--accent-deep-violet);
+  color: var(--accent-gold);
+  font-family: var(--font-title);
+  font-size: 0.75rem;
+  padding: 4px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--accent-purple);
+  letter-spacing: 1px;
+}
+
+.case-title {
+  color: var(--accent-gold);
+  font-family: var(--font-title);
+  font-size: 1.4rem;
+  margin-top: 12px;
+  margin-bottom: 0;
+  text-shadow: var(--glow-gold);
+}
+
+.case-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.8rem;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .case-body {
+    grid-template-columns: 1fr;
+  }
+}
+
+.case-details p {
+  color: var(--text-main);
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.5;
+}
+
+.case-details strong {
+  color: var(--accent-gold);
+}
+
+.case-caption-box {
+  background: rgba(8, 4, 18, 0.85);
+  border-left: 3px solid var(--accent-gold);
+  padding: 1.2rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: var(--text-muted);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.case-caption-box p {
+  margin-top: 8px;
+  margin-bottom: 0;
+  font-style: italic;
+  font-size: 1.05rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.case-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid rgba(157, 78, 221, 0.5);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  object-fit: cover;
+}
+
+.case-img:hover {
+  transform: scale(1.08);
+  border-color: var(--accent-gold);
+  box-shadow: var(--glow-gold);
+  z-index: 5;
 }
