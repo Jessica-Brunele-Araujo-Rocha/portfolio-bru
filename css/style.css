@@ -657,11 +657,6 @@ summary.case-summary::-webkit-details-marker {
   .menu ul { grid-template-columns: 1fr; }
 }
 
-/* BLINDAGEM ANTI-VAZAMENTO DE IMAGEM NO CABEÇALHO DO ACORDEÃO */
-summary.case-summary img {
-  display: none !important;
-}
-
 /* ===================================================
    MINIATURA DE CAPA NOS CARDS FECHADOS
    =================================================== */
