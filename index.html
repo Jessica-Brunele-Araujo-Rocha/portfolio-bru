@@ -134,30 +134,38 @@
   </div>
 </section>
 
-  <!-- TAROT DA ESTRATÉGIA DIGITAL -->
-<section id="tarot" class="panel tarot-section">
-  <h2 class="section-title">✦ Tarot da Estratégia Digital ✦</h2>
-  <p class="gb-intro" style="text-align: center; margin-bottom: 2rem;">
-    Escolha uma carta para revelar a previsão e o conselho místico para o posicionamento da sua marca: 🔮
+  <!-- ORÁCULO INTERATIVO (TAROT + GERADOR) -->
+<section id="oraculo-interativo" class="panel oraculo-section">
+  <h2 class="section-title">✦ Oráculo Interativo ✦</h2>
+  <p class="gb-intro" style="text-align: center; margin-bottom: 1.5rem;">
+    Escolha qual ferramenta mística você deseja consultar agora: 🔮
   </p>
 
-  <div class="tarot-container">
+  <!-- Botões das Abas -->
+  <div class="oracle-tabs">
+    <button class="tab-btn active" onclick="alternarAba('tarotTab', this)">🃏 TAROT DA ESTRATÉGIA</button>
+    <button class="tab-btn" onclick="alternarAba('spellTab', this)">🧪 GERADOR DE FEITIÇOS</button>
+  </div>
+
+  <!-- CONTEÚDO 1: TAROT DA ESTRATÉGIA -->
+  <div id="tarotTab" class="tab-content active">
+    <p style="text-align: center; margin-bottom: 1.5rem; color: #a0aec0; font-size: 0.95rem;">
+      Escolha uma carta para revelar a previsão e o conselho para a sua marca:
+    </p>
+
     <div class="cards-grid">
-      <!-- Carta 1 -->
       <div class="tarot-card" onclick="revelarCarta(0)">
         <div class="card-inner">
           <div class="card-front">🔮<br><span>CLIQUE</span></div>
           <div class="card-back" id="back-0"></div>
         </div>
       </div>
-      <!-- Carta 2 -->
       <div class="tarot-card" onclick="revelarCarta(1)">
         <div class="card-inner">
           <div class="card-front">🌙<br><span>CLIQUE</span></div>
           <div class="card-back" id="back-1"></div>
         </div>
       </div>
-      <!-- Carta 3 -->
       <div class="tarot-card" onclick="revelarCarta(2)">
         <div class="card-inner">
           <div class="card-front">🖤<br><span>CLIQUE</span></div>
@@ -166,35 +174,29 @@
       </div>
     </div>
 
-    <!-- Painel de Resultado -->
     <div id="tarot-result" class="tarot-result-box" style="display: none;">
       <h3 id="card-title"></h3>
       <p id="card-meaning"></p>
       <div class="result-action">
-        <a href="https://wa.me/5521997741059" target="_blank" class="retro-btn tarot-btn">✦ Alquimizar minha Estratégia no WhatsApp ✦</a>
+        <a href="https://wa.me/55SEUNUMERO" target="_blank" class="retro-btn tarot-btn">✦ Alquimizar minha Estratégia no WhatsApp ✦</a>
       </div>
     </div>
+  </div>
 
-  </div> <!-- Fecha .tarot-container -->
-</section> <!-- Fecha #tarot -->
-
-  <!-- GERADOR DE FEITIÇOS DE CONTEÚDO -->
-<section id="spell-generator" class="panel spell-section">
-  <h2 class="section-title">✦ Gerador de Feitiços de Conteúdo ✦</h2>
-  <p class="gb-intro" style="text-align: center; margin-bottom: 1.5rem;">
-    Em busca de inspiração digital? Consulte o Grimório e receba uma poção/gancho de conteúdo para o seu perfil: 📜✨
-  </p>
-
-  <div class="spell-box">
-    <div class="cauldron-icon">🧪</div>
-    <button id="conjureBtn" class="retro-btn spell-btn" onclick="conjurarFeitico()">✦ CONJURAR IDEIA DE CONTEÚDO ✦</button>
-    
-    <div id="spellDisplay" class="spell-display" style="display: none;">
-      <span class="spell-badge" id="spellCategory">✨ FEITIÇO DE RETENÇÃO</span>
-      <p id="spellText" class="spell-text">"Seu conteúdo aparecerá aqui..."</p>
-      <small class="spell-tip">💡 <em>Dica de Alquimista: Use esta ideia em um Reels curto ou no primeiro carrossel da semana!</em></small>
+  <!-- CONTEÚDO 2: GERADOR DE FEITIÇOS -->
+  <div id="spellTab" class="tab-content" style="display: none;">
+    <div class="spell-box">
+      <div class="cauldron-icon">🧪</div>
+      <button class="retro-btn spell-btn" onclick="conjurarFeitico()">✦ CONJURAR IDEIA DE CONTEÚDO ✦</button>
+      
+      <div id="spellDisplay" class="spell-display" style="display: none;">
+        <span class="spell-badge" id="spellCategory">✨ FEITIÇO DE RETENÇÃO</span>
+        <p id="spellText" class="spell-text">"Seu conteúdo aparecerá aqui..."</p>
+        <small class="spell-tip">💡 <em>Dica de Alquimista: Use esta ideia em um Reels curto ou carrossel!</em></small>
+      </div>
     </div>
   </div>
+
 </section>
 
 <!-- REGISTROS DE JORNADA -->
