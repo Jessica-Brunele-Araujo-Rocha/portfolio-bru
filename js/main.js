@@ -1,4 +1,5 @@
 // Main JavaScript para o Grimório Místico de Jessica Brunele
+
 // ==========================================
 // 🔮 FUNÇÕES GLOBAIS (Acessíveis pelo HTML)
 // ==========================================
@@ -192,6 +193,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Grimório / Guestbook
   const gbForm = document.getElementById("gbForm");
   const gbName = document.getElementById("gbName");
+  const gbPhone = document.getElementById("gbPhone");
   const gbMsg = document.getElementById("gbMsg");
   const gbList = document.getElementById("gbList");
 
@@ -208,6 +210,7 @@ document.addEventListener("DOMContentLoaded", () => {
     storedEntries.forEach(entry => {
       const li = document.createElement("li");
       li.className = "gb-item";
+      // Exibe apenas o nome e a mensagem publicamente na página (preservando a privacidade do telefone)
       li.innerHTML = `<div class="gb-item-author">✦ ${escapeHtml(entry.name)}:</div><p class="gb-item-text">"${escapeHtml(entry.msg)}"</p>`;
       gbList.appendChild(li);
     });
@@ -219,18 +222,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
   renderGuestbook();
 
+  // Envio via Formspree + atualização na tela
   if (gbForm) {
-    gbForm.addEventListener("submit", (e) => {
+    gbForm.addEventListener("submit", async (e) => {
       e.preventDefault();
-      const nameVal = gbName.value.trim();
-      const msgVal = gbMsg.value.trim();
+      const nameVal = gbName ? gbName.value.trim() : "";
+      const phoneVal = gbPhone ? gbPhone.value.trim() : "";
+      const msgVal = gbMsg ? gbMsg.value.trim() : "";
 
       if (nameVal && msgVal) {
-        storedEntries.unshift({ name: nameVal, msg: msgVal });
-        localStorage.setItem("gothic_guestbook", JSON.stringify(storedEntries));
-        renderGuestbook();
-        if (gbName) gbName.value = "";
-        if (gbMsg) gbMsg.value = "";
+        const formData = new FormData(gbForm);
+
+        try {
+          const response = await fetch(gbForm.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+              'Accept': 'application/json'
+            }
+          });
+
+          if (response.ok) {
+            // Salva no localStorage e renderiza na tela
+            storedEntries.unshift({ name: nameVal, msg: msgVal });
+            localStorage.setItem("gothic_guestbook", JSON.stringify(storedEntries));
+            renderGuestbook();
+
+            gbName.value = "";
+            if (gbPhone) gbPhone.value = "";
+            gbMsg.value = "";
+            alert("✨ Sua assinatura foi selada no Grimório e enviada com sucesso!");
+          } else {
+            alert("⚠️ Houve um problema ao enviar seu feitiço. Tente novamente!");
+          }
+        } catch (error) {
+          alert("⚠️ Erro de conexão ao enviar a mensagem.");
+        }
       }
     });
   }
