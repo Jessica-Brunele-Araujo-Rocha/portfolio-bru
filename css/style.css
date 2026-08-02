@@ -343,30 +343,6 @@ summary.case-summary::-webkit-details-marker {
   margin: 0;
 }
 
-/* REQUISIÇÃO EXATA PARA TRAVAR A MINIATURA DO CASE */
-.summary-thumb-box {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 4px !important;
-  flex-shrink: 0 !important;
-}
-
-.summary-thumb-box img {
-  width: 50px !important;
-  height: 50px !important;
-  min-width: 50px !important;
-  min-height: 50px !important;
-  max-width: 50px !important;
-  max-height: 50px !important;
-  object-fit: cover !important;
-  border-radius: 6px !important;
-  border: 1px solid var(--accent-gold) !important;
-  box-shadow: 0 0 8px rgba(247, 208, 112, 0.4) !important;
-  display: block !important;
-}
-
 .accordion-icon {
   font-family: var(--font-title);
   font-size: 0.85rem;
