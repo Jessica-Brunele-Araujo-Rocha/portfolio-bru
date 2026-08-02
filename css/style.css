@@ -938,3 +938,164 @@ h1.gothic-title {
   box-shadow: var(--glow-gold);
   z-index: 5;
 }
+
+/* ===================================================
+   ✦ ESTRUTURA DOS CARDS RE TRÁTEIS (ACCORDION) & CARROSSEL
+   =================================================== */
+.cases-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Card Retrátil */
+.case-accordion {
+  background: rgba(16, 0, 43, 0.85);
+  border: 1px solid var(--accent-gold);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease;
+}
+
+.case-accordion[open] {
+  box-shadow: var(--glow-gold), 0 6px 25px rgba(0, 0, 0, 0.8);
+}
+
+/* Cabeçalho Clicável */
+.case-summary {
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  list-style: none;
+  background: rgba(24, 10, 36, 0.9);
+  user-select: none;
+}
+
+.case-summary::-webkit-details-marker {
+  display: none;
+}
+
+.case-summary:hover {
+  background: rgba(36, 0, 70, 0.9);
+}
+
+.summary-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.accordion-icon {
+  font-family: var(--font-title);
+  font-size: 0.85rem;
+  color: var(--accent-gold);
+  border: 1px solid var(--accent-gold);
+  padding: 6px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.case-accordion[open] .accordion-icon {
+  background: var(--accent-purple);
+  color: #fff;
+}
+
+/* Conteúdo Expandido */
+.case-body {
+  padding: 1.5rem;
+  border-top: 1px dashed rgba(247, 208, 112, 0.3);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.8rem;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .case-body {
+    grid-template-columns: 1fr;
+  }
+}
+
+.case-details p {
+  color: var(--text-main);
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.case-caption-box {
+  background: rgba(8, 4, 18, 0.85);
+  border-left: 3px solid var(--accent-gold);
+  padding: 1rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+/* CARROSSEL INSTAGRAM HORIZONTAL (FORÇADO) */
+.case-gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.instagram-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  overflow: hidden !important;
+  border-radius: 12px;
+  border: 1px solid var(--accent-gold);
+  box-shadow: 0 0 15px rgba(247, 208, 112, 0.2);
+  background: #000;
+}
+
+.carousel-track {
+  display: flex !important;
+  flex-direction: row !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-track img {
+  flex: 0 0 100% !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  scroll-snap-align: start;
+  object-fit: cover;
+  display: block !important;
+}
+
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(8, 4, 18, 0.8);
+  color: var(--accent-gold);
+  border: 1px solid var(--accent-gold);
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.nav-left { left: 8px; }
+.nav-right { right: 8px; }
