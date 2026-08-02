@@ -273,7 +273,7 @@ h1.gothic-title {
   background: rgba(60, 9, 108, 0.8);
   color: var(--accent-gold);
   border: 1px solid var(--accent-gold);
-  padding: 8px 16px;
+  padding: 10px 16px;
   border-radius: 6px;
   text-decoration: none;
   display: inline-block;
@@ -674,62 +674,77 @@ summary.case-summary::-webkit-details-marker {
 }
 
 /* ===================================================
-   RESPONSIVO E AJUSTES MOBILE (CELULAR)
+   RESPONSIVO E AJUSTES MOBILE (CELULAR) - BLINDADO
    =================================================== */
 @media (max-width: 768px) {
   .case-body { 
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr !important; 
   }
   
   .menu ul { 
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr !important; 
   }
 
-  /* Organiza o cabeçalho do case no celular de forma limpa */
+  /* Organiza perfeitamente os cases no celular */
   summary.case-summary {
     flex-direction: column !important;
     align-items: stretch !important;
-    gap: 15px !important;
+    gap: 12px !important;
     padding: 1rem !important;
   }
 
   .case-preview-wrapper {
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+
+  .summary-info {
+    width: calc(100% - 70px) !important;
   }
 
   .case-title {
-    font-size: 1.15rem !important;
+    font-size: 1.1rem !important;
+    line-height: 1.3 !important;
+    word-break: break-word !important;
   }
 
-  /* O botão "CONJURAR CASE" ocupa a largura total embaixo no celular */
+  .case-badge {
+    font-size: 0.65rem !important;
+  }
+
+  /* Botão "CONJURAR CASE" alinhado e fluido no mobile */
   .accordion-icon {
     width: 100% !important;
-    text-align: center;
-    display: block;
+    text-align: center !important;
+    display: block !important;
+    margin-top: 5px !important;
   }
 
-  /* Organiza perfeitamente os botões da seção Sobre no mobile */
+  /* Corrige a quebra dos botões na seção Sobre */
   .btn-group {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
   }
 
   .btn-row {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
     margin-top: 0 !important;
   }
 
   .retro-btn {
     width: 100% !important;
+    max-width: 100% !important;
     text-align: center !important;
     display: block !important;
     box-sizing: border-box !important;
+    white-space: normal !important;
   }
 }
