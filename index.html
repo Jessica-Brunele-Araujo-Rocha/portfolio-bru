@@ -95,23 +95,27 @@
   </div>
 </section>
 
-<!-- SEÇÃO DE CASES / ALQUIMIAS EM DESTAQUE -->
+<!-- SEÇÃO DE CASES / ALQUIMIAS EM DESTAQUE (RETRÁTIL) -->
 <section id="cases" class="panel">
   <h2 class="section-title">✦ Alquimias em Destaque ✦</h2>
   <p class="gb-intro" style="text-align: center; margin-bottom: 2rem;">
-    Confira como transmutamos direcionamento estratégico e sensibilidade estética em narrativas de alto impacto: 🔮
+    Clique no case para expandir o direcionamento e visualizar o carrossel completo: 🔮
   </p>
 
   <div class="cases-container">
 
-    <!-- CARD 1: PSICOLOGIA -->
-    <article class="case-card">
-      <div class="case-header">
-        <span class="case-badge">🧠 SAÚDE MENTAL & PSICOLOGIA</span>
-        <h3 class="case-title">Carrossel Psicoeducativo: Os 5 Estágios do Luto</h3>
-      </div>
+    <!-- CASE 1: PSICOLOGIA -->
+    <details class="case-accordion">
+      <summary class="case-summary">
+        <div class="summary-info">
+          <span class="case-badge">🧠 SAÚDE MENTAL & PSICOLOGIA</span>
+          <h3 class="case-title">Carrossel Psicoeducativo: Os 5 Estágios do Luto</h3>
+        </div>
+        <span class="accordion-icon">✦ VER CASE ✦</span>
+      </summary>
 
       <div class="case-body">
+        <!-- Coluna de Direcionamento e Copy -->
         <div class="case-details">
           <p><strong>🎯 Direcionamento Estratégico:</strong><br>
           Utilizar a psicoeducação como pilar de atração para um público engajado em saúde mental e acolhimento humano. Construir autoridade clínica com sensibilidade e humanização do perfil profissional.</p>
@@ -131,24 +135,23 @@
           </div>
         </div>
 
+        <!-- Carrossel Deslizante Horizontal -->
         <div class="case-gallery">
           <div class="instagram-carousel">
             <div class="carousel-track" id="track-case-1">
-              <img src="assets/luto-capa.png" alt="Slide 1 - Os 5 Estágios do Luto" class="case-img">
-              <img src="assets/luto-negacao.png" alt="Slide 2 - Negação" class="case-img">
-              <img src="assets/luto-raiva.png" alt="Slide 3 - Raiva" class="case-img">
-              <img src="assets/luto-barganha.png" alt="Slide 4 - Barganha" class="case-img">
-              <img src="assets/luto-depressao.png" alt="Slide 5 - Depressão" class="case-img">
-              <img src="assets/luto-aceitacao.png" alt="Slide 6 - Aceitação" class="case-img">
+              <img src="assets/luto-capa.png" alt="Slide 1 - Os 5 Estágios do Luto">
+              <img src="assets/luto-negacao.png" alt="Slide 2 - Negação">
+              <img src="assets/luto-raiva.png" alt="Slide 3 - Raiva">
+              <img src="assets/luto-barganha.png" alt="Slide 4 - Barganha">
+              <img src="assets/luto-depressao.png" alt="Slide 5 - Depressão">
+              <img src="assets/luto-aceitacao.png" alt="Slide 6 - Aceitação">
             </div>
-            <button class="carousel-nav nav-left" onclick="slideCarousel('track-case-1', -1)">❮</button>
-            <button class="carousel-nav nav-right" onclick="slideCarousel('track-case-1', 1)">❯</button>
+            <button type="button" class="carousel-nav nav-left" onclick="slideCarousel('track-case-1', -1)">❮</button>
+            <button type="button" class="carousel-nav nav-right" onclick="slideCarousel('track-case-1', 1)">❯</button>
           </div>
         </div>
       </div>
-    </article>
-
-    <!-- ESPAÇO PARA OS PRÓXIMOS CASES (SÓ COPIAR O CARD ACIMA) -->
+    </details>
 
   </div>
 </section>
@@ -308,7 +311,7 @@
 <section class="moon-strip" aria-hidden="true">
   <span class="moon-phase">🌒</span>
   <span class="moon-phase">🌓</span>
-  <span class="moon-phase">🌔</span>
+  <span class="moon-phase">i🌔</span>
   <span class="moon-phase">🌕</span>
   <span class="moon-phase">🌖</span>
   <span class="moon-phase">🌗</span>
