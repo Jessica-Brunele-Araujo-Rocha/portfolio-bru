@@ -291,7 +291,7 @@ h1.gothic-title {
   border-radius: 0 8px 8px 0;
 }
 
-/* ACCORDION DE CASES & MINIATURAS */
+/* ACCORDION DE CASES & BLINDAGEM DE IMAGEM */
 .cases-container {
   display: flex;
   flex-direction: column;
@@ -348,9 +348,10 @@ summary.case-summary::-webkit-details-marker {
   font-size: 0.85rem;
   color: var(--accent-gold);
   border: 1px solid var(--accent-gold);
-  padding: 4px 10px;
+  padding: 6px 12px;
   border-radius: 6px;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .case-body {
@@ -361,7 +362,7 @@ summary.case-summary::-webkit-details-marker {
   gap: 1.8rem;
 }
 
-/* CARROSSEL INSTAGRAM (DENTRO DO CASE EXPANDIDO) */
+/* CARROSSEL INSTAGRAM (LIMITADO AO ESPAÇO CORRETO) */
 .case-gallery {
   display: flex;
   justify-content: center;
@@ -431,11 +432,7 @@ summary.case-summary::-webkit-details-marker {
   .menu ul { grid-template-columns: 1fr; }
 }
 
-/* BLINDAGEM ABSOLUTA: IMPEDE QUALQUER IMAGEM FORA DO LUGAR NO ACORDEÃO */
-summary.case-summary img,
-.case-summary img,
-.summary-info img {
+/* BLINDAGEM ANTI-VAZAMENTO DE IMAGEM NO CABEÇALHO DO ACORDEÃO */
+summary.case-summary img {
   display: none !important;
-  width: 0 !important;
-  height: 0 !important;
 }
