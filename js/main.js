@@ -262,3 +262,29 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+// Contagem Regressiva em tempo real para a Próxima Lua Cheia (28 de Agosto de 2026)
+function atualizarContagemLua() {
+  const dataAlvo = new Date('2026-08-28T04:18:00Z').getTime();
+  const agora = new Date().getTime();
+  const diferenca = dataAlvo - agora;
+
+  const elementoContador = document.getElementById('countdown');
+  if (!elementoContador) return;
+
+  if (diferenca <= 0) {
+    elementoContador.innerHTML = "🌕 LUA CHEIA EM SEU ÁPICE 🌕";
+    return;
+  }
+
+  const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+  const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
+  const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
+
+  elementoContador.innerHTML = `${dias}d ${horas}h ${minutos}m ${segundos}s`;
+}
+
+// Executa e atualiza a cada 1 segundo
+setInterval(atualizarContagemLua, 1000);
+atualizarContagemLua();
