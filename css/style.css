@@ -2,6 +2,9 @@
    TEMA MÍSTICO & GÓTICO - JESSICA BRUNELE
    Luas, Gatos Pretos, Violeta Profundo e Dourado Lunar
    =================================================== */
+html {
+  scroll-behavior: smooth;
+}
 
 :root {
   --bg-color: #080412;
