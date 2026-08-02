@@ -1,5 +1,55 @@
 // Main JavaScript para o Grimório Místico de Jessica Brunele
 
+// 🔮 BANCO DE CARTAS DO TAROT DA ESTRATÉGIA DIGITAL (Fora do DOMContentLoaded para acesso global)
+const baralhoTarot = [
+  {
+    nome: "🃏 O Alquimista de Conteúdo",
+    icone: "⚗️",
+    mensagem: "Sua marca precisa de transmutação! Hora de unir dados e narrativas marcantes para transformar seguidores casuais em uma comunidade engajada."
+  },
+  {
+    nome: "🌙 A Estrela da Vanguarda",
+    icone: "✨",
+    mensagem: "O algoritmo favorece a autenticidade. Teste novos formatos de Reels e explore ferramentas de IA generativa para acelerar seus fluxos."
+  },
+  {
+    nome: "🔮 O Oráculo do Posicionamento",
+    icone: "👁️",
+    mensagem: "A clareza atrai autoridade. Refine a mensagem central do seu perfil e entregue copys diretas que resolvam a dor exata do seu público."
+  }
+];
+
+// Função chamada diretamente pelo HTML via onclick="revelarCarta(n)"
+function revelarCarta(index) {
+  const cartas = document.querySelectorAll('.tarot-card');
+  
+  if (!cartas || cartas.length === 0) return;
+
+  // Virar todas as cartas
+  cartas.forEach((card, i) => {
+    card.classList.add('flipped');
+    const backElement = document.getElementById(`back-${i}`);
+    if (backElement) {
+      backElement.innerHTML = `
+        <span style="font-size:2rem;">${baralhoTarot[i].icone}</span>
+        <strong style="margin-top:5px; font-size:0.8rem; color:#d4af37;">${baralhoTarot[i].nome}</strong>
+      `;
+    }
+  });
+
+  // Exibir o painel com o resultado
+  const resultado = baralhoTarot[index];
+  const titleElem = document.getElementById('card-title');
+  const meaningElem = document.getElementById('card-meaning');
+  const resultBox = document.getElementById('tarot-result');
+
+  if (titleElem && meaningElem && resultBox) {
+    titleElem.innerText = resultado.nome;
+    meaningElem.innerText = resultado.mensagem;
+    resultBox.style.display = 'block';
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   // Hit Counter
   const hitCounter = document.getElementById("hitCounter");
@@ -111,44 +161,6 @@ document.addEventListener("DOMContentLoaded", () => {
         renderGuestbook();
         gbName.value = "";
         gbMsg.value = "";
-
-        // BANCO DE CARTAS DO TAROT DA ESTRATÉGIA DIGITAL
-const baralhoTarot = [
-  {
-    nome: "🃏 O Alquimista de Conteúdo",
-    icone: "⚗️",
-    mensagem: "Sua marca precisa de transmutação! Hora de unir dados e narrativas marcantes para transformar seguidores casuais em uma comunidade engajada."
-  },
-  {
-    nome: "🌙 A Estrela da Vanguarda",
-    icone: "✨",
-    mensagem: "O algoritmo favorece a autenticidade. Teste novos formatos de Reels e explore ferramentas de IA generativa para acelerar seus fluxos."
-  },
-  {
-    nome: "🔮 O Oráculo do Posicionamento",
-    icone: "👁️",
-    mensagem: "A clareza atrai autoridade. Refine a mensagem central do seu perfil e entregue copys diretas que resolvam a dor exata do seu público."
-  }
-];
-
-function revelarCarta(index) {
-  const cartas = document.querySelectorAll('.tarot-card');
-  
-  // Evita re-clicar na mesma tiragem
-  cartas.forEach((card, i) => {
-    card.classList.add('flipped');
-    document.getElementById(`back-${i}`).innerHTML = `
-      <span style="font-size:2rem;">${baralhoTarot[i].icone}</span>
-      <strong style="margin-top:5px; font-size:0.8rem;">${baralhoTarot[i].nome}</strong>
-    `;
-  });
-
-  // Exibe o resultado da carta sorteada/escolhida
-  const resultado = baralhoTarot[index];
-  document.getElementById('card-title').innerText = resultado.nome;
-  document.getElementById('card-meaning').innerText = resultado.mensagem;
-  document.getElementById('tarot-result').style.display = 'block';
-}
       }
     });
   }
