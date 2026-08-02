@@ -236,11 +236,12 @@
         </div>
 
         <div class="case-gallery">
-          <div class="instagram-carousel" style="display: flex; justify-content: center; align-items: center; background: #000; border-radius: 12px; padding: 10px; position: relative;">
-            <video controls preload="metadata" poster="assets/REELS TWEET SIMONE CAPA.png" style="width: 100%; max-height: 480px; border-radius: 8px; object-fit: cover; display: block; position: relative; z-index: 5;">
+          <div class="reels-container" id="reelsPlayerBox">
+            <video id="reelsVideo" poster="assets/REELS TWEET SIMONE CAPA.png" onclick="toggleReelsPlay()">
               <source src="assets/REELS TWEET SIMONE.mp4" type="video/mp4">
               Seu navegador não suporta vídeos HTML5.
             </video>
+            <button type="button" class="custom-play-btn" id="playBtn" onclick="toggleReelsPlay()">▶</button>
           </div>
         </div>
       </div>
@@ -491,6 +492,27 @@
     track.scrollBy({
       left: direction * scrollAmount,
       behavior: 'smooth'
+    });
+  }
+
+  function toggleReelsPlay() {
+    const video = document.getElementById('reelsVideo');
+    const box = document.getElementById('reelsPlayerBox');
+    
+    if (video.paused) {
+      video.play();
+      video.setAttribute('controls', 'controls');
+      box.classList.add('playing');
+    } else {
+      video.pause();
+      box.classList.remove('playing');
+    }
+  }
+
+  const reelsVideoEl = document.getElementById('reelsVideo');
+  if (reelsVideoEl) {
+    reelsVideoEl.addEventListener('pause', function() {
+      document.getElementById('reelsPlayerBox').classList.remove('playing');
     });
   }
 </script>
