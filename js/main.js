@@ -1,5 +1,20 @@
 // Main JavaScript para o Grimório Místico de Jessica Brunele
 
+// FUNÇÃO PARA ALTERNAR ENTRE AS ABAS DO ORÁCULO
+function alternarAba(abaId, btn) {
+  // Esconde todas as abas
+  document.getElementById('tarotTab').style.display = 'none';
+  document.getElementById('spellTab').style.display = 'none';
+
+  // Remove classe ativa de todos os botões
+  const btns = document.querySelectorAll('.tab-btn');
+  btns.forEach(b => b.classList.remove('active'));
+
+  // Mostra a aba selecionada e ativa o botão
+  document.getElementById(abaId).style.display = 'block';
+  btn.classList.add('active');
+}
+
 // 🔮 BANCO DE CARTAS DO TAROT DA ESTRATÉGIA DIGITAL (Fora do DOMContentLoaded para acesso global)
 const baralhoTarot = [
   {
