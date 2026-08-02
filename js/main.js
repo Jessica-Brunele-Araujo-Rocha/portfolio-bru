@@ -201,7 +201,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const gbList = document.getElementById("gbList");
 
   const initialEntries = [
-    { name: "Morgana, a Sábia", msg: "Que a luz da lua ilumine sempre a sua gestão e seu caminho!" },
+    { name: "Morgana, a Sábia 🧙‍♀️", msg: "Que a luz da lua ilumine sempre a sua gestão e seu caminho!" },
     { name: "O Gato Guardião 🐈‍⬛", msg: "Aprovado por todos os felinos da casa. Vibe impecável!" }
   ];
 
