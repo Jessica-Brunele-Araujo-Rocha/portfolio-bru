@@ -50,6 +50,53 @@ function revelarCarta(index) {
   }
 }
 
+// BANCO DE FEITIÇOS DE CONTEÚDO
+const feiticosConteudo = [
+  {
+    categoria: "🔮 FEITIÇO DE AUTORIDADE",
+    texto: "3 erros silenciosos que o seu nicho comete todos os dias (e como a sua marca resolve o 1º)."
+  },
+  {
+    categoria: "✨ POÇÃO DE ENGAJAMENTO",
+    texto: "A verdade não contada sobre [sua área de atuação]: O que ninguém te avisa antes de começar."
+  },
+  {
+    categoria: "🌙 FEITIÇO DE CONVERSÃO",
+    texto: "Se você pudesse resolver apenas UM problema da sua marca hoje, qual seria? Responda este post que eu te ajudo."
+  },
+  {
+    categoria: "⚡ ENCANTAMENTO DE RETENÇÃO",
+    texto: "O ritual exato que eu uso para organizar meus processos em metade do tempo (Bastidores em Reels)."
+  },
+  {
+    categoria: "⚗️ ALQUIMIA DE CONTEÚDO",
+    texto: "Como transformar 1 hora de planejamento em 7 dias de posts estratégicos usando Inteligência Artificial."
+  }
+];
+
+function conjurarFeitico() {
+  const display = document.getElementById("spellDisplay");
+  const categoryElem = document.getElementById("spellCategory");
+  const textElem = document.getElementById("spellText");
+
+  if (!display || !categoryElem || !textElem) return;
+
+  // Sorteia um feitiço aleatório
+  const randomIndex = Math.floor(Math.random() * feiticosConteudo.length);
+  const feitico = feiticosConteudo[randomIndex];
+
+  // Efeito de transição
+  display.style.opacity = 0;
+  display.style.display = "block";
+
+  setTimeout(() => {
+    categoryElem.innerText = feitico.categoria;
+    textElem.innerText = `"${feitico.texto}"`;
+    display.style.transition = "opacity 0.4s ease";
+    display.style.opacity = 1;
+  }, 150);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   // Hit Counter
   const hitCounter = document.getElementById("hitCounter");
