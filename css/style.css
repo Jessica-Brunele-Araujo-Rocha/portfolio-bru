@@ -824,6 +824,20 @@ a, button, summary, .tarot-card, .insert-coin, .retro-btn, .tab-btn {
 }
  
 /* ===================================================
+   ETIQUETA ACIMA DO TÍTULO (contexto rápido do site)
+   =================================================== */
+.eyebrow-label{
+  font-family: 'VT323', monospace;
+  font-size: 15px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  opacity: 0.85;
+  margin: 0 0 6px;
+  text-align: center;
+}
+ 
+/* ===================================================
    MOLDURA E POSICIONAMENTO DA FOTO DE PERFIL
    (regra única — sem duplicidade/conflito)
    =================================================== */
@@ -847,7 +861,16 @@ a, button, summary, .tarot-card, .insert-coin, .retro-btn, .tab-btn {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
+  /* SEM overflow:hidden aqui - era isso que cortava a lua no mobile.
+     O recorte redondo agora fica so no .photo-frame-inner, abaixo. */
+}
+ 
+.photo-frame-inner {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 50% !important;
   overflow: hidden !important;
+  -webkit-mask-image: -webkit-radial-gradient(circle, #fff 100%, #000 100%);
 }
  
 .photo-frame img {
@@ -877,3 +900,4 @@ a, button, summary, .tarot-card, .insert-coin, .retro-btn, .tab-btn {
   box-shadow: var(--glow-gold) !important;
   z-index: 5 !important;
 }
+ 
