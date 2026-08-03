@@ -830,3 +830,43 @@ a, button, summary, .tarot-card, .insert-coin, .retro-btn, .tab-btn {
   opacity: 0;
   pointer-events: none;
 }
+
+/* ===================================================
+    MOLDURA E POSICIONAMENTO DA FOTO DE PERFIL
+   =================================================== */
+.photo-frame {
+  position: relative;
+  width: 190px;
+  height: 190px;
+  margin: 0 auto;
+  border-radius: 50%;
+  padding: 5px;
+  background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple));
+  box-shadow: var(--glow-gold), var(--glow-purple);
+  flex-shrink: 0;
+}
+
+.photo-frame img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  border-radius: 50% !important;
+  border: 3px solid var(--bg-color) !important;
+  display: block !important;
+}
+
+.frame-moon-badge {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  background: var(--bg-color);
+  border: 1px solid var(--accent-gold);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  box-shadow: var(--glow-gold);
+}
