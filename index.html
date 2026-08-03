@@ -235,6 +235,7 @@
         <div class="case-gallery">
           <div class="reels-container" id="reelsPlayerBox">
             <video id="reelsVideo" poster="assets/REELS%20TWEET%20SIMONE%20CAPA.png" preload="metadata" playsinline webkit-playsinline onclick="toggleReelsPlay(event)">              Seu navegador não suporta vídeos HTML5.
+            <source src="assets/REELS%20TWEET%20SIMONE.mp4" type="video/mp4">
             </video>
             <button type="button" class="custom-play-btn" id="playBtn" onclick="toggleReelsPlay(event)">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="margin-left: 3px;"><polygon points="5,3 19,12 5,21"></polygon></svg>
@@ -559,7 +560,7 @@
     const video = document.getElementById('reelsVideo');
     const box = document.getElementById('reelsPlayerBox');
     if (!video || !box) return;
- 
+
     if (video.paused || video.ended) {
       const playPromise = video.play();
       if (playPromise !== undefined) {
@@ -568,7 +569,7 @@
           box.classList.add('playing');
         }).catch(error => {
           console.error("Erro ao reproduzir o Reels:", error);
-          alert("Não consegui reproduzir o vídeo. Verifique se o arquivo assets/REELS TWEET SIMONE.mp4 existe no repositório e se o nome está exatamente igual ao usado no HTML.");
+          alert("Erro real do navegador:\n\n" + error.name + ": " + error.message + "\n\nMe manda essa mensagem exata pra eu identificar a causa.");
         });
       }
     } else {
