@@ -251,7 +251,9 @@ h1.gothic-title {
   padding-bottom: 10px;
 }
 
-/* About & Work */
+/* ===================================================
+   MOLDURA E FOTO DE PERFIL (ESTILO GITHUB PERFEITO)
+   =================================================== */
 .about-card {
   display: flex;
   gap: 30px;
@@ -259,12 +261,46 @@ h1.gothic-title {
   flex-wrap: wrap;
 }
 
+.photo-frame {
+  position: relative !important;
+  width: 180px !important;
+  height: 180px !important;
+  margin: 0 auto !important;
+  border-radius: 50% !important;
+  padding: 4px !important;
+  background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple)) !important;
+  box-shadow: var(--glow-gold), var(--glow-purple) !important;
+  flex-shrink: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
 .photo-frame img {
-  width: 170px;
-  height: 170px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 3px solid var(--bg-color);
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: 52% 28% !important; /* Centraliza o rosto perfeitamente no círculo */
+  border-radius: 50% !important;
+  border: 3px solid var(--bg-color) !important;
+  display: block !important;
+}
+
+.frame-moon-badge {
+  position: absolute !important;
+  bottom: 6px !important;
+  right: 6px !important;
+  background: var(--bg-color) !important;
+  border: 1px solid var(--accent-gold) !important;
+  border-radius: 50% !important;
+  width: 34px !important;
+  height: 34px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 0.95rem !important;
+  box-shadow: var(--glow-gold) !important;
+  z-index: 10 !important;
 }
 
 .retro-btn {
@@ -673,6 +709,74 @@ summary.case-summary::-webkit-details-marker {
   color: var(--accent-gold);
 }
 
+/* CORREÇÃO DO PLAYER DE VÍDEO (REELS) */
+.instagram-carousel video {
+  width: 100% !important;
+  max-height: 480px !important;
+  border-radius: 8px !important;
+  object-fit: contain !important;
+  background: #000 !important;
+  display: block !important;
+  cursor: pointer !important;
+}
+
+.instagram-carousel video::-webkit-media-controls {
+  display: flex !important;
+}
+
+.reels-container {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--accent-gold);
+  margin: 0 auto;
+  box-shadow: var(--glow-purple);
+}
+
+.reels-container video {
+  width: 100% !important;
+  max-height: 480px !important;
+  display: block !important;
+  object-fit: cover !important;
+  cursor: pointer;
+}
+
+.custom-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background: rgba(36, 0, 70, 0.85);
+  border: 2px solid var(--accent-gold);
+  border-radius: 50%;
+  color: var(--accent-gold);
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--glow-gold);
+  transition: all 0.3s ease;
+  z-index: 10;
+  padding-left: 4px;
+}
+
+.custom-play-btn:hover {
+  background: var(--accent-purple);
+  color: #fff;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.reels-container.playing .custom-play-btn {
+  opacity: 0;
+  pointer-events: none;
+}
+
 /* ===================================================
    RESPONSIVO E AJUSTES MOBILE (CELULAR) - BLINDADO
    =================================================== */
@@ -685,7 +789,6 @@ summary.case-summary::-webkit-details-marker {
     grid-template-columns: 1fr !important; 
   }
 
-  /* Organiza perfeitamente os cases no celular */
   summary.case-summary {
     flex-direction: column !important;
     align-items: stretch !important;
@@ -715,7 +818,6 @@ summary.case-summary::-webkit-details-marker {
     font-size: 0.65rem !important;
   }
 
-  /* Botão "CONJURAR CASE" alinhado e fluido no mobile */
   .accordion-icon {
     width: 100% !important;
     text-align: center !important;
@@ -723,7 +825,6 @@ summary.case-summary::-webkit-details-marker {
     margin-top: 5px !important;
   }
 
-  /* Corrige a quebra dos botões na seção Sobre */
   .btn-group {
     display: flex !important;
     flex-direction: column !important;
@@ -749,177 +850,7 @@ summary.case-summary::-webkit-details-marker {
   }
 }
 
-/* ===================================================
-   CURSOR DE MORCEGO NO HOVER
-   =================================================== */
+/* CURSOR DE MORCEGO NO HOVER */
 a, button, summary, .tarot-card, .insert-coin, .retro-btn, .tab-btn {
   cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24'><path fill='%23f7d070' d='M12 2c-.5 0-1 .2-1.4.6L8 5.2C6.2 4.4 4 5 3 6.8c-.8 1.4-.4 3.2.9 4.2-.6.8-1 1.8-1 2.8 0 2.2 1.8 4 4 4h1.2c.4 1.7 1.8 3 3.8 3s3.4-1.3 3.8-3H16c2.2 0 4-1.8 4-4 0-1-.4-2-1-2.8 1.3-1 1.7-2.8.9-4.2-1-1.8-3.2-2.4-5-1.6l-2.6-2.6c-.4-.4-.9-.6-1.4-.6z'/></svg>"), pointer !important;
-}
-
-/* ===================================================
-   CORREÇÃO DO PLAYER DE VÍDEO (REELS)
-   =================================================== */
-.instagram-carousel video {
-  width: 100% !important;
-  max-height: 480px !important;
-  border-radius: 8px !important;
-  object-fit: contain !important;
-  background: #000 !important;
-  display: block !important;
-  cursor: pointer !important;
-}
-
-/* Força a exibição dos controlos nativos */
-.instagram-carousel video::-webkit-media-controls {
-  display: flex !important;
-}
-
-/* ===================================================
-   PLAYER DE REELS CUSTOMIZADO COM BOTÃO DE PLAY MÍSTICO
-   =================================================== */
-.reels-container {
-  position: relative;
-  width: 100%;
-  max-width: 300px;
-  background: #000;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid var(--accent-gold);
-  margin: 0 auto;
-  box-shadow: var(--glow-purple);
-}
-
-.reels-container video {
-  width: 100% !important;
-  max-height: 480px !important;
-  display: block !important;
-  object-fit: cover !important;
-  cursor: pointer;
-}
-
-/* Botão de Play centralizado estilo player de vídeo místico */
-.custom-play-btn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 60px;
-  height: 60px;
-  background: rgba(36, 0, 70, 0.85);
-  border: 2px solid var(--accent-gold);
-  border-radius: 50%;
-  color: var(--accent-gold);
-  font-size: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: var(--glow-gold);
-  transition: all 0.3s ease;
-  z-index: 10;
-  padding-left: 4px; /* Centraliza o ícone do play visualmente */
-}
-
-.custom-play-btn:hover {
-  background: var(--accent-purple);
-  color: #fff;
-  transform: translate(-50%, -50%) scale(1.1);
-}
-
-.reels-container.playing .custom-play-btn {
-  opacity: 0;
-  pointer-events: none;
-}
-
-/* ===================================================
-   MOLDURA E POSICIONAMENTO DA FOTO DE PERFIL
-   =================================================== */
-.about-card {
-  display: flex;
-  gap: 30px;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.photo-frame {
-  position: relative !important;
-  width: 170px !important;
-  height: 170px !important;
-  margin: 0 auto !important;
-  border-radius: 50% !important;
-  padding: 4px !important;
-  background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple)) !important;
-  box-shadow: var(--glow-gold), var(--glow-purple) !important;
-  flex-shrink: 0 !important;
-}
-
-.photo-frame img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  object-position: center 30% !important; /* Centraliza o seu rosto perfeitamente no círculo */
-  border-radius: 50% !important;
-  border: 3px solid var(--bg-color) !important;
-  display: block !important;
-}
-
-.frame-moon-badge {
-  position: absolute !important;
-  bottom: 8px !important;
-  right: 8px !important;
-  background: var(--bg-color) !important;
-  border: 1px solid var(--accent-gold) !important;
-  border-radius: 50% !important;
-  width: 34px !important;
-  height: 34px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  font-size: 0.95rem !important;
-  box-shadow: var(--glow-gold) !important;
-  z-index: 10 !important;
-}
-
-/* ===================================================
-   MOLDURA E FORMATO CIRCULAR DA FOTO DE PERFIL
-   =================================================== */
-.photo-frame {
-  position: relative !important;
-  width: 190px !important;
-  height: 190px !important;
-  margin: 0 auto !important;
-  border-radius: 50% !important;
-  padding: 4px !important;
-  background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple)) !important;
-  box-shadow: var(--glow-gold), var(--glow-purple) !important;
-  flex-shrink: 0 !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
-
-.photo-frame img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  border-radius: 50% !important;
-  border: 3px solid var(--bg-color) !important;
-  display: block !important;
-}
-
-.frame-moon-badge {
-  position: absolute !important;
-  bottom: 5px !important;
-  right: 10px !important;
-  background: var(--bg-color) !important;
-  border: 1px solid var(--accent-gold) !important;
-  border-radius: 50% !important;
-  width: 32px !important;
-  height: 32px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  font-size: 0.9rem !important;
-  box-shadow: var(--glow-gold) !important;
-  z-index: 5 !important;
 }
