@@ -3,7 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>☽ BRU ☾︎</title>
+<title>Jessica Brunele | Estrategista Digital & Conteúdo</title>
+<meta name="description" content="Portfólio de Jessica Brunele — Estrategista Digital e Social Media. Planejamento estratégico, criação de conteúdo e IA Generativa.">
+<meta property="og:title" content="Jessica Brunele | Estrategista Digital & Conteúdo">
+<meta property="og:description" content="Portfólio de Jessica Brunele — Estrategista Digital e Social Media.">
+<meta property="og:image" content="assets/foto-jessica.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Pirata+One&family=VT323&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
@@ -26,6 +30,7 @@
   <div class="witch-emblem">
     <span>☽◯☾</span>
   </div>
+  <p class="eyebrow-label">Portfólio de Estratégia Digital, Conteúdo & IA Generativa</p>
   <h1 class="gothic-title" data-text="BRU">BRU</h1>
   <p class="tagline">Estrategista Digital ⛧ Creative Content</p>
   <p class="sub-tagline">🧙‍♀️ Transformando marcas em comunidades e dados em histórias inesquecíveis.</p>
@@ -57,7 +62,9 @@
  
   <div class="about-card">
     <div class="photo-frame">
-      <img src="assets/foto-jessica.png" alt="BRU - Estrategista Digital" id="profilePhoto">
+      <div class="photo-frame-inner">
+        <img src="assets/foto-jessica.png" alt="BRU - Estrategista Digital" id="profilePhoto">
+      </div>
       <div class="frame-moon-badge">🌙</div>
     </div>
  
@@ -560,7 +567,7 @@
     const video = document.getElementById('reelsVideo');
     const box = document.getElementById('reelsPlayerBox');
     if (!video || !box) return;
-
+ 
     if (video.paused || video.ended) {
       const playPromise = video.play();
       if (playPromise !== undefined) {
