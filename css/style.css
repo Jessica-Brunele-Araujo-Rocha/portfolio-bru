@@ -870,7 +870,6 @@ a, button, summary, .tarot-card, .insert-coin, .retro-btn, .tab-btn {
   height: 100% !important;
   border-radius: 50% !important;
   overflow: hidden !important;
-  -webkit-mask-image: -webkit-radial-gradient(circle, #fff 100%, #000 100%);
 }
  
 .photo-frame img {
@@ -900,4 +899,3 @@ a, button, summary, .tarot-card, .insert-coin, .retro-btn, .tab-btn {
   box-shadow: var(--glow-gold) !important;
   z-index: 5 !important;
 }
- 
