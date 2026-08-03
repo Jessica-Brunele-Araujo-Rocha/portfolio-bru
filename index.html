@@ -89,7 +89,6 @@
   </div>
 </section>
 
-<!-- SEÇÃO DE CASES / MAGIAS EM DESTAQUE (RETRÁTIL) -->
 <section id="cases" class="panel">
   <h2 class="section-title">✦ Magias em Destaque ✦</h2>
   <p class="gb-intro" style="text-align: center; margin-bottom: 2rem;">
@@ -98,7 +97,6 @@
 
   <div class="cases-container">
 
-    <!-- CASE 1: PSICOLOGIA (CARROSSEL) -->
     <details class="case-accordion">
       <summary class="case-summary">
         <div class="case-preview-wrapper">
@@ -150,7 +148,6 @@
       </div>
     </details>
 
-    <!-- CASE 2: PSIQUIATRIA & PSICOEDUCAÇÃO (CARROSSEL OUTONAL - DRA. MARINA MATTEI) -->
     <details class="case-accordion">
       <summary class="case-summary">
         <div class="case-preview-wrapper">
@@ -201,7 +198,6 @@
       </div>
     </details>
 
-    <!-- CASE 3: REELS TWEET DE IMPACTO (TERAPIA DE CHOQUE) -->
     <details class="case-accordion">
       <summary class="case-summary">
         <div class="case-preview-wrapper">
@@ -241,13 +237,14 @@
               <source src="assets/REELS TWEET SIMONE.mp4" type="video/mp4">
               Seu navegador não suporta vídeos HTML5.
             </video>
-            <button type="button" class="custom-play-btn" id="playBtn" onclick="toggleReelsPlay()">▶</button>
+            <button type="button" class="custom-play-btn" id="playBtn" onclick="toggleReelsPlay()">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="margin-left: 3px;"><polygon points="5,3 19,12 5,21"></polygon></svg>
+            </button>
           </div>
         </div>
       </div>
     </details>
 
-    <!-- CASE 4: RETRATOS CORPORATIVOS & ALTO PADRÃO (ESTÁTICO) -->
     <details class="case-accordion">
       <summary class="case-summary">
         <div class="case-preview-wrapper">
@@ -290,231 +287,3 @@
         </div>
       </div>
     </details>
-
-  </div>
-</section>
-
-<section id="process" class="panel">
-  <h2 class="section-title">✦ Rituais de Criação ✦</h2>
-  <p class="gb-intro" style="text-align: center; margin-bottom: 2rem;">🔮 É assim que a mágica acontece na prática: </p>
-
-  <div class="job-list">
-
-    <article class="job">
-      <h3>01 ⭑ Desenvolvendo o Conceito</h3>
-      <p class="job-desc">
-        Crio ideias e conceitos visuais perfeitamente alinhados ao direcionamento estratégico da sua marca.
-      </p>
-    </article>
-
-    <article class="job">
-      <h3>02 ⭑ Direcionando e Preparando</h3>
-      <p class="job-desc">
-        Seleciono referências, cenários e elementos visuais que dão suporte e vida ao conceito definido.
-      </p>
-    </article>
-
-    <article class="job">
-      <h3>03 ⭑ Produzindo o Conteúdo</h3>
-      <p class="job-desc">
-        Oriento os detalhes e acompanho a estética com precisão para a captura das suas fotos e vídeos.
-      </p>
-    </article>
-
-    <article class="job">
-      <h3>04 ⭑ Editando e Refinando</h3>
-      <p class="job-desc">
-        Ajusto, faço a curadoria e lapido os materiais para garantir um resultado profissional, fluido e polido.
-      </p>
-    </article>
-
-    <article class="job">
-      <h3>05 ⭑ Entregando e Apresentando</h3>
-      <p class="job-desc">
-        Disponibilizo o seu conteúdo pronto e otimizado para as plataformas digitais, redes e campanhas.
-      </p>
-    </article>
-
-  </div>
-</section>
-
-<section id="oraculo-interativo" class="panel oraculo-section">
-  <h2 class="section-title">✦ Oráculo Interativo ✦</h2>
-  <p class="gb-intro" style="text-align: center; margin-bottom: 1.5rem;">
-    🔮 Escolha qual ferramenta mística você deseja consultar agora: 
-  </p>
-
-  <div class="oracle-tabs">
-    <button class="tab-btn active" onclick="alternarAba('tarotTab', this)">🃏 TAROT DA ESTRATÉGIA</button>
-    <button class="tab-btn" onclick="alternarAba('spellTab', this)">🧪 GERADOR DE FEITIÇOS</button>
-  </div>
-
-  <div id="tarotTab" class="tab-content active">
-    <p style="text-align: center; margin-bottom: 1.5rem; color: #a0aec0; font-size: 0.95rem;">
-      Escolha uma carta para revelar a previsão e o conselho para a sua marca:
-    </p>
-
-    <div class="cards-grid">
-      <div class="tarot-card" onclick="revelarCarta(0)">
-        <div class="card-inner">
-          <div class="card-front">🔮<br><span>CLIQUE</span></div>
-          <div class="card-back" id="back-0"></div>
-        </div>
-      </div>
-      <div class="tarot-card" onclick="revelarCarta(1)">
-        <div class="card-inner">
-          <div class="card-front">🌙<br><span>CLIQUE</span></div>
-          <div class="card-back" id="back-1"></div>
-        </div>
-      </div>
-      <div class="tarot-card" onclick="revelarCarta(2)">
-        <div class="card-inner">
-          <div class="card-front">🖤<br><span>CLIQUE</span></div>
-          <div class="card-back" id="back-2"></div>
-        </div>
-      </div>
-    </div>
-
-    <div id="tarot-result" class="tarot-result-box" style="display: none;">
-      <h3 id="card-title"></h3>
-      <p id="card-meaning"></p>
-      <div class="result-action">
-        <a href="https://wa.me/5521997741059" target="_blank" class="retro-btn tarot-btn">✦ Alquimizar minha Estratégia no WhatsApp ✦</a>
-      </div>
-    </div>
-  </div>
-
-  <div id="spellTab" class="tab-content" style="display: none;">
-    <div class="spell-box">
-      <div class="cauldron-icon">🧪</div>
-      <button class="retro-btn spell-btn" onclick="conjurarFeitico()">✦ CONJURAR IDEIA DE CONTEÚDO ✦</button>
-      
-      <div id="spellDisplay" class="spell-display" style="display: none;">
-        <span class="spell-badge" id="spellCategory">✨ FEITIÇO DE RETENÇÃO</span>
-        <p id="spellText" class="spell-text">"Seu conteúdo aparecerá aqui..."</p>
-        <small class="spell-tip">💡 <em>Dica de Alquimista: Use esta ideia em um Reels curto ou carrossel!</em></small>
-      </div>
-    </div>
-  </div>
-
-</section>
-
-<section id="work" class="panel">
-  <h2 class="section-title">✦ O Tear da Jornada ✦</h2>
-  <p class="gb-intro" style="text-align: center; margin-bottom: 2rem;">
-    🧵 Cada experiência, aprendizado e ciclo tramado nos fios do destino:
-  </p>
-
-  <div class="job-list">
-    <!-- Seus artigos de jornada continuam aqui embaixo... -->
-
-    <article class="job">
-      <h3>Social Media</h3>
-      <p class="job-meta"><strong>Agência Linksy</strong> ✦ Maio 2026 – Presente</p>
-      <p class="job-desc">
-        Criação de conteúdo, roteiros inovadores de vídeos/reels, copys atraentes e gerenciamento completo de legendas. Revisão e agendamento de conteúdos. Integração estratégica de ferramentas de IA generativa para escala de produção. Gestão de cronogramas ágeis (ClickUp) e reporte de métricas com stakeholders (mLabs).
-      </p>
-    </article>
-
-    <article class="job">
-      <h3>Coordenadora Administrativa e Financeira</h3>
-      <p class="job-meta"><strong>SEDU-ES (Secretaria de Estado da Educação)</strong> ✦ Jan 2022 – 2026</p>
-      <p class="job-desc">
-        Liderança na otimização de rotinas internas e organização de dados volumosos para tomadas de decisões rápidas. Controle orçamentário, gestão de processos e resolução ágil de problemas complexos de logística e operação.
-      </p>
-    </article>
-
-    <article class="job">
-      <h3>Outras Experiências Profissionais de Impacto</h3>
-      <p class="job-meta">✦ Stone Co. (Assistente Comercial) | ✦ Linko Group (Assistente de Logística) | ✦ DuBrooklyn Burger (Líder de Operações)</p>
-      <p class="job-desc">Ampla vivência em atendimento comercial, operações logísticas e gestão de negócios/projetos.</p>
-    </article>
-
-    <article class="job skills-job">
-      <h3>Ferramentas, Tecnologias & Competências</h3>
-      <p class="job-desc">
-        <strong>Design & Criação:</strong> Canva, Adobe Express, Figma, Ferramentas de IA Generativa.<br>
-        <strong>Gestão & Organização:</strong> Notion, ClickUp, Trello, Jira.<br>
-        <strong>Agendamento & Análise:</strong> mLabs.<br>
-        <strong>Produtividade & Análise:</strong> Google Workspace, Excel Avançado, Funis de Vendas.
-      </p>
-    </article>
-
-  </div>
-</section>
-
-<section class="moon-strip" aria-hidden="true">
-  <span class="moon-phase">🌒</span>
-  <span class="moon-phase">🌓</span>
-  <span class="moon-phase">🌔</span>
-  <span class="moon-phase">🌕</span>
-  <span class="moon-phase">🌖</span>
-  <span class="moon-phase">🌗</span>
-  <span class="moon-phase">🌘</span>
-</section>
-
-<section class="countdown-box">
-  <p class="countdown-title">✦ TEMPO RESTANTE PARA A PRÓXIMA LUA CHEIA ✦</p>
-  <div class="countdown-digits" id="countdown">Calculando alinhamento...</div>
-  <p class="countdown-sub">Momento ideal para manifestar grandes ideias e lançar novas estratégias...</p>
-</section>
-
-<section id="guestbook" class="panel guestbook">
-  <h2 class="section-title">📜 Grimório de Visitas 📜</h2>
-  <p class="gb-intro">🔮 Deixe seu feedback, parceria ou mensagem de conexão gravada neste livro místico! </p>
-  
-  <form id="gbForm" class="gb-form" action="https://formspree.io/f/mqervnep" method="POST">
-    <input type="text" name="nome" id="gbName" placeholder="🦋 Seu nome ou Título Místico 🦋" required>
-    <input type="tel" name="whatsapp" id="gbPhone" placeholder="📱 WhatsApp com DDD (Ex: 27999999999)" required>
-    <textarea name="mensagem" id="gbMsg" placeholder="📜 Escreva sua mensagem ou feitiço aqui..." required></textarea>
-    <button type="submit" class="retro-btn">✦ SELEI MINHA ASSINATURA ✦</button>
-  </form>
-
-  <ul class="gb-list" id="gbList"></ul>
-</section>
-
-<footer class="site-footer">
-  <p>🌙 FILHA DA LUA & ESTRATEGISTA 🖤</p>
-  <p>© <span id="year"></span> BRU ⭑ Estratégia, Conteúdo & Design em HTML/CSS ⭑ Feito para todas as fases da lua.</p>
-  <div class="badges">
-    <span class="badge">🌙 FILHA DA LUA</span>
-    <span class="badge">🖤 SOCIAL MEDIA & ESTRATÉGIA</span>
-    <span class="badge">🔮 100% WITCHCORE</span>
-  </div>
-</footer>
-
-<script src="js/main.js"></script>
-<script>
-  function slideCarousel(trackId, direction) {
-    const track = document.getElementById(trackId);
-    if (!track) return;
-    const scrollAmount = track.clientWidth;
-    track.scrollBy({
-      left: direction * scrollAmount,
-      behavior: 'smooth'
-    });
-  }
-
-  function toggleReelsPlay() {
-    const video = document.getElementById('reelsVideo');
-    const box = document.getElementById('reelsPlayerBox');
-    
-    if (video.paused) {
-      video.play();
-      video.setAttribute('controls', 'controls');
-      box.classList.add('playing');
-    } else {
-      video.pause();
-      box.classList.remove('playing');
-    }
-  }
-
-  const reelsVideoEl = document.getElementById('reelsVideo');
-  if (reelsVideoEl) {
-    reelsVideoEl.addEventListener('pause', function() {
-      document.getElementById('reelsPlayerBox').classList.remove('playing');
-    });
-  }
-</script>
-</body>
-</html>
