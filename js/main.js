@@ -139,36 +139,67 @@ function atualizarContagemLua() {
   elementoContador.innerHTML = `${dias}d ${horas}h ${minutos}m ${segundos}s`;
 }
 
-// 5. Funções da Alquimia Estratégica
+// 5. Funções da Alquimia Estratégica (Diagnóstico Literário Inteligente)
+const baseDiagnosticosAlquimia = {
+  "Faturamento e Vendas Diretas": {
+    nomeObjetivo: "Faturamento e Vendas Diretas",
+    pilares: "gerar conversão, tráfego qualificado e iniciação de conversas comerciais",
+    frequencia: "pelo menos, 4 posts semanais (com alto volume no feed e Stories diários intensos)"
+  },
+  "Geração de Leads e Oportunidades (Pipeline)": {
+    nomeObjetivo: "Geração de Leads e Oportunidades",
+    pilares: "captura de leads e qualificação profunda de audiência",
+    frequencia: "conteúdos densos e direcionados, focando em materiais ricos e distribuição estratégica"
+  },
+  "Reconhecimento e Consciência de Marca (Brand Awareness)": {
+    nomeObjetivo: "Reconhecimento e Consciência de Marca",
+    pilares: "alcance e impressões, crescimento de audiência e viralização",
+    frequencia: "alto volume no feed (4 a 5 vezes por semana), priorizando o formato Reels para expansão de mercado"
+  },
+  "Retenção, Fidelidade e LTV (Lifetime Value)": {
+    nomeObjetivo: "Retenção e Fidelidade de Clientes",
+    pilares: "engajamento de comunidade e educação avançada de produto/serviço",
+    frequencia: "frequência enxuta no feed (1 a 2 vezes por semana) + foco intenso em Stories e canais de transmissão"
+  },
+  "Posicionamento, Autoridade e Brand Equity": {
+    nomeObjetivo: "Posicionamento e Autoridade",
+    pilares: "construção de autoridade e social proof (prova social)",
+    frequencia: "frequência moderada no feed (2 a 3 vezes por semana), priorizando densidade, carrosséis profundos e conteúdos altamente salváveis"
+  },
+  "Relacionamento e Atendimento ao Cliente (Social Customer Care)": {
+    nomeObjetivo: "Relacionamento e Atendimento ao Cliente",
+    pilares: "interação, resposta rápida e conteúdo de suporte proativo",
+    frequencia: "monitoramento ativo e fluxos contínuos de direcionamento nos destaques e directs"
+  }
+};
+
 function executarAlquimia() {
   const objectiveSelect = document.getElementById('businessObjective');
-  const paceSelect = document.getElementById('businessPace');
-  
-  const objective = objectiveSelect.value;
-  const pace = paceSelect.value;
+  const selectedKey = objectiveSelect.value;
 
-  if (!objective || !pace) {
-    alert("Por favor, selecione o objetivo e a intensidade para realizar a alquimia.");
+  if (!selectedKey) {
+    alert("Por favor, selecione o objetivo principal do seu negócio para realizar a alquimia.");
     return;
   }
+
+  const dados = baseDiagnosticosAlquimia[selectedKey];
 
   document.getElementById('alchemy-step-1').style.display = 'none';
   document.getElementById('alchemy-step-2').style.display = 'block';
 
   const resultTextEl = document.getElementById('alchemyResultText');
-  const paceTextEl = document.getElementById('alchemyPaceText');
   
-  resultTextEl.innerHTML = `Com base nas suas respostas, o seu objetivo estratégico é <strong>${objective}</strong>.`;
-  paceTextEl.innerHTML = `📊 <strong>Frequência Recomendada:</strong> ${pace}`;
+  // Monta a frase exatamente como você estruturou
+  resultTextEl.innerHTML = `Como seu objetivo principal é <strong>${dados.nomeObjetivo}</strong>, a recomendação literária para <strong>${dados.pilares}</strong> é de <strong>${dados.frequencia}</strong>. Para personalizar a sua fórmula mágica estratégica, como tom de voz, estrutura do funil de conteúdo e planejamento editorial, entre em contato comigo.`;
 
+  // Configura o botão do WhatsApp com a mensagem pronta
   const whatsappBtn = document.getElementById('whatsappAlchemyBtn');
-  const mensagemWpp = encodeURIComponent(`Olá, Bru! Fiz o diagnóstico de Alquimia Estratégica no seu site. Meu objetivo principal é "${objective}" com "${pace}". Gostaria de agendar uma proposta personalizada! 🔮✨`);
+  const mensagemWpp = encodeURIComponent(`Olá, Bru! Fiz o diagnóstico de Alquimia Estratégica no seu site e meu foco principal é "${dados.nomeObjetivo}". Gostaria de personalizar minha fórmula mágica e agendar uma estratégia! 🔮✨`);
   whatsappBtn.href = `https://api.whatsapp.com/send?phone=5521997741059&text=${mensagemWpp}`;
 }
 
 function reiniciarAlquimia() {
   document.getElementById('businessObjective').selectedIndex = 0;
-  document.getElementById('businessPace').selectedIndex = 0;
   document.getElementById('alchemy-step-2').style.display = 'none';
   document.getElementById('alchemy-step-1').style.display = 'block';
 }
