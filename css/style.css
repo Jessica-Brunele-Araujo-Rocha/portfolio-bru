@@ -809,7 +809,7 @@ a, button, summary, .tarot-card, .insert-coin, .retro-btn, .tab-btn {
   box-shadow: var(--glow-gold);
   transition: all 0.3s ease;
   z-index: 10;
-  padding-left: 4px; /* Centraliza o ícone do play visualmente */
+  padding-left: 4px;
 }
  
 .custom-play-btn:hover {
@@ -839,7 +839,6 @@ a, button, summary, .tarot-card, .insert-coin, .retro-btn, .tab-btn {
  
 /* ===================================================
    MOLDURA E POSICIONAMENTO DA FOTO DE PERFIL
-   (regra única — sem duplicidade/conflito)
    =================================================== */
 .about-card {
   display: flex;
@@ -861,8 +860,6 @@ a, button, summary, .tarot-card, .insert-coin, .retro-btn, .tab-btn {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  /* SEM overflow:hidden aqui - era isso que cortava a lua no mobile.
-     O recorte redondo agora fica so no .photo-frame-inner, abaixo. */
 }
  
 .photo-frame-inner {
@@ -876,11 +873,10 @@ a, button, summary, .tarot-card, .insert-coin, .retro-btn, .tab-btn {
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
-  object-position: 50% 22% !important; /* mesmo enquadramento de rosto do avatar do GitHub */
+  object-position: 50% 22% !important;
   border-radius: 50% !important;
   border: 3px solid var(--bg-color) !important;
   display: block !important;
-  /* nenhum filter aplicado: cores do arquivo original em assets/ preservadas 100% */
 }
  
 .frame-moon-badge {
@@ -898,4 +894,61 @@ a, button, summary, .tarot-card, .insert-coin, .retro-btn, .tab-btn {
   font-size: 0.9rem !important;
   box-shadow: var(--glow-gold) !important;
   z-index: 5 !important;
+}
+
+/* ===================================================
+   ESTILOS DA SEÇÃO ALQUIMIA ESTRATÉGICA
+   =================================================== */
+.alchemy-box {
+  max-width: 650px;
+  margin: 0 auto;
+  background: rgba(16, 0, 43, 0.75);
+  border: 1px solid var(--accent-purple);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: var(--glow-purple);
+}
+
+.alchemy-label {
+  display: block;
+  font-family: var(--font-title);
+  color: var(--accent-gold);
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+}
+
+.alchemy-select {
+  width: 100%;
+  background: rgba(8, 4, 18, 0.9);
+  border: 1px solid var(--accent-purple);
+  color: var(--text-main);
+  padding: 12px;
+  border-radius: 6px;
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.alchemy-select:focus {
+  border-color: var(--accent-gold);
+  outline: none;
+  box-shadow: var(--glow-gold);
+}
+
+.alchemy-result-card {
+  background: rgba(8, 4, 18, 0.9);
+  border: 1px solid var(--accent-gold);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: left;
+}
+
+.alchemy-disclaimer {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  font-style: italic;
+  border-left: 2px solid var(--accent-gold);
+  padding-left: 12px;
+  margin-top: 15px;
+  line-height: 1.5;
 }
