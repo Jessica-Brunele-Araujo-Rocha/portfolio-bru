@@ -1,7 +1,5 @@
 // Main JavaScript para o Grimório Místico de Jessica Brunele
 
-// Main JavaScript para o Grimório Místico de Jessica Brunele
-
 // ==========================================
 // 🔮 FUNÇÕES GLOBAIS (Acessíveis pelo HTML)
 // ==========================================
@@ -121,7 +119,6 @@ function conjurarFeitico() {
 
 // 4. Contagem Regressiva para a Próxima Lua Cheia (28 de Agosto de 2026)
 function atualizarContagemLua() {
-  // Formato numérico universal compatível com todos os navegadores e celulares
   const dataAlvo = new Date(2026, 7, 28, 4, 18, 0).getTime(); 
   const agora = new Date().getTime();
   const diferenca = dataAlvo - agora;
@@ -140,6 +137,40 @@ function atualizarContagemLua() {
   const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
 
   elementoContador.innerHTML = `${dias}d ${horas}h ${minutos}m ${segundos}s`;
+}
+
+// 5. Funções da Alquimia Estratégica
+function executarAlquimia() {
+  const objectiveSelect = document.getElementById('businessObjective');
+  const paceSelect = document.getElementById('businessPace');
+  
+  const objective = objectiveSelect.value;
+  const pace = paceSelect.value;
+
+  if (!objective || !pace) {
+    alert("Por favor, selecione o objetivo e a intensidade para realizar a alquimia.");
+    return;
+  }
+
+  document.getElementById('alchemy-step-1').style.display = 'none';
+  document.getElementById('alchemy-step-2').style.display = 'block';
+
+  const resultTextEl = document.getElementById('alchemyResultText');
+  const paceTextEl = document.getElementById('alchemyPaceText');
+  
+  resultTextEl.innerHTML = `Com base nas suas respostas, o seu objetivo estratégico é <strong>${objective}</strong>.`;
+  paceTextEl.innerHTML = `📊 <strong>Frequência Recomendada:</strong> ${pace}`;
+
+  const whatsappBtn = document.getElementById('whatsappAlchemyBtn');
+  const mensagemWpp = encodeURIComponent(`Olá, Bru! Fiz o diagnóstico de Alquimia Estratégica no seu site. Meu objetivo principal é "${objective}" com "${pace}". Gostaria de agendar uma proposta personalizada! 🔮✨`);
+  whatsappBtn.href = `https://api.whatsapp.com/send?phone=5521997741059&text=${mensagemWpp}`;
+}
+
+function reiniciarAlquimia() {
+  document.getElementById('businessObjective').selectedIndex = 0;
+  document.getElementById('businessPace').selectedIndex = 0;
+  document.getElementById('alchemy-step-2').style.display = 'none';
+  document.getElementById('alchemy-step-1').style.display = 'block';
 }
 
 
