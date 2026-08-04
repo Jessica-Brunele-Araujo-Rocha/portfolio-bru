@@ -26,6 +26,18 @@
   </div>
 </div>
  
+<nav class="topbar" id="menu">
+  <ul>
+    <li><a href="#about">🧙‍♀️ Sobre</a></li>
+    <li><a href="#cases">⚗️ Magias</a></li>
+    <li><a href="#alquimia">🧪 Alquimia</a></li>
+    <li><a href="#oraculo-interativo">🔮 Oráculo</a></li>
+    <li><a href="#process">🕯️ Rituais</a></li>
+    <li><a href="#work">🧵 Jornada</a></li>
+    <li><a href="#guestbook">📜 Grimório</a></li>
+  </ul>
+</nav>
+ 
 <header class="hero">
   <div class="witch-emblem">
     <span>☽◯☾</span>
@@ -40,18 +52,7 @@
   </div>
 </header>
  
-<nav class="menu" id="menu">
-  <div class="menu-title">✦ ORÁCULO DE NAVEGAÇÃO ✦</div>
-  <ul>
-    <li><a href="#about">🧙‍♀️ SOBRE A SACERDOTISA DIGITAL</a></li>
-    <li><a href="#cases">⚗️ MAGIAS EM DESTAQUE</a></li>
-    <li><a href="#process">🧪 RITUAIS DE CRIAÇÃO</a></li>
-    <li><a href="#oraculo-interativo">🔮 ORÁCULO INTERATIVO</a></li>
-    <li><a href="#alquimia">⚗️ ALQUIMIA ESTRATÉGICA</a></li>
-    <li><a href="#work">🧵 O TEAR DA JORNADA</a></li>
-    <li><a href="#guestbook">📜 GRIMÓRIO DE VISITAS</a></li>
-  </ul>
-</nav>
+ 
  
 <section class="egg-box">
   <a href="#oraculo-interativo" class="insert-coin" style="display: inline-block; text-decoration: none;">🔮 CONSULTAR O ORÁCULO INTERATIVO 🔮</a>
@@ -362,47 +363,50 @@
   </div>
 </section>
  
-<section id="process" class="panel">
-  <h2 class="section-title">✦ Rituais de Criação ✦</h2>
-  <p class="gb-intro" style="text-align: center; margin-bottom: 2rem;">🔮 É assim que a mágica acontece na prática: </p>
+<!-- SEÇÃO: ALQUIMIA ESTRATÉGICA -->
+<!-- SEÇÃO: ALQUIMIA ESTRATÉGICA -->
+<section id="alquimia" class="panel alquimia-section">
+  <h2 class="section-title">✦ ALQUIMIA ESTRATÉGICA ✦</h2>
+  <p class="gb-intro" style="text-align: center; margin-bottom: 2rem;">
+    Responda ao questionário abaixo para entender o momento do seu negócio e descobrir qual fórmula mágica guiará o seu ciclo lunar.
+  </p>
  
-  <div class="job-list">
+  <div class="alchemy-box">
+    <!-- Passo 1: Escolha do Objetivo -->
+    <div id="alchemy-step-1" class="alchemy-step active">
+      <label class="alchemy-label" for="businessObjective">Qual é o principal objetivo do seu negócio neste ciclo?</label>
+      <select id="businessObjective" class="alchemy-select">
+        <option value="" disabled selected>✦ Selecione o objetivo principal ✦</option>
+        <option value="Faturamento e Vendas Diretas">1. Faturamento e Vendas Diretas (Curto Prazo)</option>
+        <option value="Geração de Leads e Oportunidades (Pipeline)">2. Geração de Leads e Oportunidades (Pipeline)</option>
+        <option value="Reconhecimento e Consciência de Marca (Brand Awareness)">3. Reconhecimento e Consciência de Marca (Brand Awareness)</option>
+        <option value="Retenção, Fidelidade e LTV (Lifetime Value)">4. Retenção, Fidelidade e LTV (Lifetime Value)</option>
+        <option value="Posicionamento, Autoridade e Brand Equity">5. Posicionamento, Autoridade e Brand Equity (Médio Prazo)</option>
+        <option value="Relacionamento e Atendimento ao Cliente (Social Customer Care)">6. Relacionamento e Atendimento ao Cliente (Social Customer Care)</option>
+      </select>
  
-    <article class="job">
-      <h3>01 ⭑ Desenvolvendo o Conceito</h3>
-      <p class="job-desc">
-        Crio ideias e conceitos visuais perfeitamente alinhados ao direcionamento estratégico da sua marca.
-      </p>
-    </article>
+      <div style="text-align: center; margin-top: 25px;">
+        <button type="button" class="retro-btn" onclick="executarAlquimia()">✦ REVELAR DIAGNÓSTICO ✦</button>
+      </div>
+    </div>
  
-    <article class="job">
-      <h3>02 ⭑ Direcionando e Preparando</h3>
-      <p class="job-desc">
-        Seleciono referências, cenários e elementos visuais que dão suporte e vida ao conceito definido.
-      </p>
-    </article>
+    <!-- Passo 2: Resultado do Diagnóstico Inteligente -->
+    <div id="alchemy-step-2" class="alchemy-step" style="display: none;">
+      <div class="alchemy-result-card">
+        <h3 style="font-family: var(--font-title); color: var(--accent-gold); margin-top: 0;">📜 Resultado da Leitura Alquímica</h3>
+        
+        <p id="alchemyResultText" style="font-size: 1.15rem; margin: 15px 0; line-height: 1.6;"></p>
+        
+        <div class="alchemy-disclaimer">
+          <em>Lembre-se que a ESTRATÉGIA é uma FÓRMULA MÁGICA e esse diagnóstico considera apenas a literatura. Para receber um diagnóstico personalizado e uma proposta de estratégia, entre em contato comigo.</em>
+        </div>
  
-    <article class="job">
-      <h3>03 ⭑ Produzindo o Conteúdo</h3>
-      <p class="job-desc">
-        Oriento os detalhes e acompanho a estética com precisão para a captura das suas fotos e vídeos.
-      </p>
-    </article>
- 
-    <article class="job">
-      <h3>04 ⭑ Editando e Refinando</h3>
-      <p class="job-desc">
-        Ajusto, faço a curadoria e lapido os materiais para garantir um resultado profissional, fluido e polido.
-      </p>
-    </article>
- 
-    <article class="job">
-      <h3>05 ⭑ Entregando e Apresentando</h3>
-      <p class="job-desc">
-        Disponibilizo o seu conteúdo pronto e otimizado para as plataformas digitais, redes e campanhas.
-      </p>
-    </article>
- 
+        <div style="text-align: center; margin-top: 25px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+          <a id="whatsappAlchemyBtn" href="#" target="_blank" rel="noopener" class="retro-btn">✦ CONJURAR ESTE DIAGNÓSTICO NO WHATSAPP ✦</a>
+          <button type="button" class="retro-btn" style="background: transparent; border-color: var(--accent-purple);" onclick="reiniciarAlquimia()">🔄 Refazer Leitura</button>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
  
@@ -466,51 +470,174 @@
   </div>
  
 </section>
-
-<!-- SEÇÃO: ALQUIMIA ESTRATÉGICA -->
-<section id="alquimia" class="panel alquimia-section">
-  <h2 class="section-title">✦ ALQUIMIA ESTRATÉGICA ✦</h2>
-  <p class="gb-intro" style="text-align: center; margin-bottom: 2rem;">
-    Responda ao questionário abaixo para entender o momento do seu negócio e descobrir qual fórmula mágica guiará o seu ciclo lunar.
-  </p>
-
-  <div class="alchemy-box">
-    <!-- Passo 1: Escolha do Objetivo -->
-    <div id="alchemy-step-1" class="alchemy-step active">
-      <label class="alchemy-label" for="businessObjective">Qual é o principal objetivo do seu negócio neste ciclo?</label>
-      <select id="businessObjective" class="alchemy-select">
-        <option value="" disabled selected>✦ Selecione o objetivo principal ✦</option>
-        <option value="Faturamento e Vendas Diretas">1. Faturamento e Vendas Diretas (Curto Prazo)</option>
-        <option value="Geração de Leads e Oportunidades (Pipeline)">2. Geração de Leads e Oportunidades (Pipeline)</option>
-        <option value="Reconhecimento e Consciência de Marca (Brand Awareness)">3. Reconhecimento e Consciência de Marca (Brand Awareness)</option>
-        <option value="Retenção, Fidelidade e LTV (Lifetime Value)">4. Retenção, Fidelidade e LTV (Lifetime Value)</option>
-        <option value="Posicionamento, Autoridade e Brand Equity">5. Posicionamento, Autoridade e Brand Equity (Médio Prazo)</option>
-        <option value="Relacionamento e Atendimento ao Cliente (Social Customer Care)">6. Relacionamento e Atendimento ao Cliente (Social Customer Care)</option>
-      </select>
-
-      <div style="text-align: center; margin-top: 25px;">
-        <button type="button" class="retro-btn" onclick="executarAlquimia()">✦ REVELAR DIAGNÓSTICO ✦</button>
-      </div>
-    </div>
-
-    <!-- Passo 2: Resultado do Diagnóstico Inteligente -->
-    <div id="alchemy-step-2" class="alchemy-step" style="display: none;">
-      <div class="alchemy-result-card">
-        <h3 style="font-family: var(--font-title); color: var(--accent-gold); margin-top: 0;">📜 Resultado da Leitura Alquímica</h3>
-        
-        <p id="alchemyResultText" style="font-size: 1.15rem; margin: 15px 0; line-height: 1.6;"></p>
-        
-        <div class="alchemy-disclaimer">
-          <em>Lembre-se que a ESTRATÉGIA é uma FÓRMULA MÁGICA e esse diagnóstico considera apenas a literatura. Para receber um diagnóstico personalizado e uma proposta de estratégia, entre em contato comigo.</em>
-        </div>
-
-        <div style="text-align: center; margin-top: 25px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-          <a id="whatsappAlchemyBtn" href="#" target="_blank" rel="noopener" class="retro-btn">✦ CONJURAR ESTE DIAGNÓSTICO NO WHATSAPP ✦</a>
-          <button type="button" class="retro-btn" style="background: transparent; border-color: var(--accent-purple);" onclick="reiniciarAlquimia()">🔄 Refazer Leitura</button>
-        </div>
-      </div>
-    </div>
+ 
+<section id="process" class="panel">
+  <h2 class="section-title">✦ Rituais de Criação ✦</h2>
+  <p class="gb-intro" style="text-align: center; margin-bottom: 2rem;">🔮 É assim que a mágica acontece na prática: </p>
+ 
+  <div class="job-list">
+ 
+    <article class="job">
+      <h3>01 ⭑ Desenvolvendo o Conceito</h3>
+      <p class="job-desc">
+        Crio ideias e conceitos visuais perfeitamente alinhados ao direcionamento estratégico da sua marca.
+      </p>
+    </article>
+ 
+    <article class="job">
+      <h3>02 ⭑ Direcionando e Preparando</h3>
+      <p class="job-desc">
+        Seleciono referências, cenários e elementos visuais que dão suporte e vida ao conceito definido.
+      </p>
+    </article>
+ 
+    <article class="job">
+      <h3>03 ⭑ Produzindo o Conteúdo</h3>
+      <p class="job-desc">
+        Oriento os detalhes e acompanho a estética com precisão para a captura das suas fotos e vídeos.
+      </p>
+    </article>
+ 
+    <article class="job">
+      <h3>04 ⭑ Editando e Refinando</h3>
+      <p class="job-desc">
+        Ajusto, faço a curadoria e lapido os materiais para garantir um resultado profissional, fluido e polido.
+      </p>
+    </article>
+ 
+    <article class="job">
+      <h3>05 ⭑ Entregando e Apresentando</h3>
+      <p class="job-desc">
+        Disponibilizo o seu conteúdo pronto e otimizado para as plataformas digitais, redes e campanhas.
+      </p>
+    </article>
+ 
   </div>
+</section>
+ 
+<section id="work" class="panel">
+  <h2 class="section-title">✦ O Tear da Jornada ✦</h2>
+  <p class="gb-intro" style="text-align: center; margin-bottom: 2rem;">
+    🧵 Cada fio tecido ao longo do caminho — a trajetória profissional que fortaleceu minha alquimia de gestão e estratégia:
+  </p>
+ 
+  <div class="timeline">
+ 
+    <article class="timeline-item">
+      <span class="timeline-dot">✦</span>
+      <div class="timeline-content">
+        <h3>Coordenadora Administrativa, de Secretaria e Financeira</h3>
+        <p class="timeline-meta">Secretaria de Estado da Educação — SEDU · Ago 2025 – Presente</p>
+        <p class="timeline-desc">Guarapari, Espírito Santo.</p>
+      </div>
+    </article>
+ 
+    <article class="timeline-item">
+      <span class="timeline-dot">✦</span>
+      <div class="timeline-content">
+        <h3>Agente de Suporte Educacional</h3>
+        <p class="timeline-meta">Secretaria de Estado da Educação — SEDU · Nov 2022 – Presente</p>
+        <p class="timeline-desc">On-site · Guarapari, Espírito Santo.</p>
+      </div>
+    </article>
+ 
+    <article class="timeline-item">
+      <span class="timeline-dot">✦</span>
+      <div class="timeline-content">
+        <h3>Coordenadora Administrativa, de Secretaria e Financeira</h3>
+        <p class="timeline-meta">Secretaria de Estado da Educação — SEDU · Abr 2023 – Mar 2024</p>
+        <p class="timeline-desc">Guarapari, Espírito Santo.</p>
+      </div>
+    </article>
+ 
+    <article class="timeline-item">
+      <span class="timeline-dot">✦</span>
+      <div class="timeline-content">
+        <h3>Suporte Técnico</h3>
+        <p class="timeline-meta">Innovate Brazil | Painéis de LED · Ago 2022 – Nov 2022</p>
+        <p class="timeline-desc">Guarapari, Espírito Santo.</p>
+      </div>
+    </article>
+ 
+    <article class="timeline-item">
+      <span class="timeline-dot">✦</span>
+      <div class="timeline-content">
+        <h3>Auxiliar de Logística (Backoffice)</h3>
+        <p class="timeline-meta">Linko Group · Mar 2021 – Jan 2022</p>
+        <p class="timeline-desc">Remoto.</p>
+      </div>
+    </article>
+ 
+    <article class="timeline-item">
+      <span class="timeline-dot">✦</span>
+      <div class="timeline-content">
+        <h3>Assistente de Contabilidade</h3>
+        <p class="timeline-meta">MA Eletromecânica · Nov 2020 – Mar 2021</p>
+        <p class="timeline-desc">São Gonçalo, Rio de Janeiro.</p>
+      </div>
+    </article>
+ 
+    <article class="timeline-item">
+      <span class="timeline-dot">✦</span>
+      <div class="timeline-content">
+        <h3>Consultor Comercial</h3>
+        <p class="timeline-meta">Stone · Nov 2019 – Mar 2020</p>
+        <p class="timeline-desc">Vila Velha, Espírito Santo.</p>
+      </div>
+    </article>
+ 
+    <article class="timeline-item">
+      <span class="timeline-dot">✦</span>
+      <div class="timeline-content">
+        <h3>Promotora de Negócios</h3>
+        <p class="timeline-meta">Ramos & Silva Correspondente no País · Jun 2019 – Set 2019</p>
+        <p class="timeline-desc">Grande Rio de Janeiro.</p>
+      </div>
+    </article>
+ 
+    <article class="timeline-item">
+      <span class="timeline-dot">✦</span>
+      <div class="timeline-content">
+        <h3>Coadministradora</h3>
+        <p class="timeline-meta">DuBrooklyn Hamburgueria · Dez 2016 – Mar 2019</p>
+        <p class="timeline-desc">Niterói.</p>
+      </div>
+    </article>
+ 
+    <article class="timeline-item">
+      <span class="timeline-dot">✦</span>
+      <div class="timeline-content">
+        <h3>Compradora</h3>
+        <p class="timeline-meta">Deli Beef Comércio de Carnes · Jun 2016 – Nov 2016</p>
+        <p class="timeline-desc">Niterói, Rio de Janeiro.</p>
+      </div>
+    </article>
+ 
+    <article class="timeline-item">
+      <span class="timeline-dot">✦</span>
+      <div class="timeline-content">
+        <h3>Assistente Administrativo</h3>
+        <p class="timeline-meta">FAETEC · Jun 2009 – Nov 2011</p>
+        <p class="timeline-desc">Rio de Janeiro.</p>
+      </div>
+    </article>
+ 
+  </div>
+</section>
+ 
+ 
+<section id="guestbook" class="panel guestbook">
+  <h2 class="section-title">📜 Grimório de Visitas 📜</h2>
+  <p class="gb-intro">🔮 Deixe seu feedback, parceria ou mensagem de conexão gravada neste livro místico! </p>
+  
+  <form id="gbForm" class="gb-form" action="https://formspree.io/f/mqervnep" method="POST">
+    <input type="text" name="nome" id="gbName" placeholder="🦋 Seu nome ou Título Místico 🦋" required>
+    <input type="tel" name="whatsapp" id="gbPhone" placeholder="📱 WhatsApp com DDD (Ex: 27999999999)" required>
+    <textarea name="mensagem" id="gbMsg" placeholder="📜 Escreva sua mensagem ou feitiço aqui..." required></textarea>
+    <button type="submit" class="retro-btn">✦ SELEI MINHA ASSINATURA ✦</button>
+  </form>
+ 
+  <ul class="gb-list" id="gbList"></ul>
 </section>
  
 <section class="moon-strip" aria-hidden="true">
@@ -527,20 +654,6 @@
   <p class="countdown-title">✦ TEMPO RESTANTE PARA A PRÓXIMA LUA CHEIA ✦</p>
   <div class="countdown-digits" id="countdown">Calculando alinhamento...</div>
   <p class="countdown-sub">Momento ideal para manifestar grandes ideias e lançar novas estratégias...</p>
-</section>
- 
-<section id="guestbook" class="panel guestbook">
-  <h2 class="section-title">📜 Grimório de Visitas 📜</h2>
-  <p class="gb-intro">🔮 Deixe seu feedback, parceria ou mensagem de conexão gravada neste livro místico! </p>
-  
-  <form id="gbForm" class="gb-form" action="https://formspree.io/f/mqervnep" method="POST">
-    <input type="text" name="nome" id="gbName" placeholder="🦋 Seu nome ou Título Místico 🦋" required>
-    <input type="tel" name="whatsapp" id="gbPhone" placeholder="📱 WhatsApp com DDD (Ex: 27999999999)" required>
-    <textarea name="mensagem" id="gbMsg" placeholder="📜 Escreva sua mensagem ou feitiço aqui..." required></textarea>
-    <button type="submit" class="retro-btn">✦ SELEI MINHA ASSINATURA ✦</button>
-  </form>
- 
-  <ul class="gb-list" id="gbList"></ul>
 </section>
  
 <footer class="site-footer">
@@ -603,40 +716,8 @@
       console.error('Falha ao carregar o vídeo. Verifique o caminho/arquivo em assets/.');
     });
   }
-
-  // Funções da Alquimia Estratégica
-  function executarAlquimia() {
-    const objectiveSelect = document.getElementById('businessObjective');
-    const paceSelect = document.getElementById('businessPace');
-    
-    const objective = objectiveSelect.value;
-    const pace = paceSelect.value;
-
-    if (!objective || !pace) {
-      alert("Por favor, selecione o objetivo e a intensidade para realizar a alquimia.");
-      return;
-    }
-
-    document.getElementById('alchemy-step-1').style.display = 'none';
-    document.getElementById('alchemy-step-2').style.display = 'block';
-
-    const resultTextEl = document.getElementById('alchemyResultText');
-    const paceTextEl = document.getElementById('alchemyPaceText');
-    
-    resultTextEl.innerHTML = `Com base nas suas respostas, o seu objetivo estratégico é <strong>${objective}</strong>.`;
-    paceTextEl.innerHTML = `📊 <strong>Frequência Recomendada:</strong> ${pace}`;
-
-    const whatsappBtn = document.getElementById('whatsappAlchemyBtn');
-    const mensagemWpp = encodeURIComponent(`Olá, Bru! Fiz o diagnóstico de Alquimia Estratégica no seu site. Meu objetivo principal é "${objective}" com "${pace}". Gostaria de agendar uma proposta personalizada! 🔮✨`);
-    whatsappBtn.href = `https://api.whatsapp.com/send?phone=5521997741059&text=${mensagemWpp}`;
-  }
-
-  function reiniciarAlquimia() {
-    document.getElementById('businessObjective').selectedIndex = 0;
-    document.getElementById('businessPace').selectedIndex = 0;
-    document.getElementById('alchemy-step-2').style.display = 'none';
-    document.getElementById('alchemy-step-1').style.display = 'block';
-  }
+ 
 </script>
 </body>
 </html>
+ 
