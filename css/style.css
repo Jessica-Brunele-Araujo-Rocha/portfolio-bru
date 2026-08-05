@@ -168,6 +168,11 @@ h1.gothic-title {
   backdrop-filter: blur(4px);
 }
  
+/* Indica visualmente que a barra rola horizontalmente no mobile */
+.topbar-hint {
+  display: none;
+}
+ 
 .topbar ul {
   list-style: none !important;
   padding: 0 !important;
@@ -230,6 +235,18 @@ h1.gothic-title {
   border-radius: 20px;
 }
  
+.retro-badge-highlight {
+  border: 2px solid var(--accent-gold);
+  border-style: solid;
+  color: var(--accent-gold);
+  background: rgba(255, 215, 0, 0.08);
+  box-shadow: var(--glow-gold);
+}
+ 
+.retro-badge-highlight:hover {
+  background: rgba(255, 215, 0, 0.18);
+}
+ 
 /* Painéis */
 .panel {
   max-width: 850px;
@@ -283,6 +300,35 @@ h1.gothic-title {
   border-left: 3px solid var(--accent-gold);
   padding: 15px 20px;
   border-radius: 0 8px 8px 0;
+}
+ 
+.job-desc {
+  text-align: justify;
+}
+ 
+/* ===================================================
+   SEÇÃO DE CONTATO
+   =================================================== */
+.contact-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+ 
+.contact-main-btn {
+  font-size: 1.15rem !important;
+  padding: 16px 28px !important;
+  background: linear-gradient(135deg, rgba(255,215,0,0.18), rgba(157,78,221,0.25)) !important;
+  border: 2px solid var(--accent-gold) !important;
+  box-shadow: var(--glow-gold);
+}
+ 
+/* Contador de almas (agora no rodapé, após o countdown) */
+.hit-counter-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 30px;
 }
  
 /* ===================================================
@@ -342,6 +388,7 @@ h1.gothic-title {
  
 .timeline-desc {
   margin: 0;
+  text-align: justify;
   color: var(--text-muted);
   font-size: 0.95rem;
 }
@@ -740,11 +787,47 @@ summary.case-summary::-webkit-details-marker {
     overflow-x: auto !important;
     flex-wrap: nowrap !important;
     -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+    padding-right: 30px !important;
+  }
+ 
+  .topbar li {
+    scroll-snap-align: start;
   }
  
   .topbar a {
     font-size: 0.8rem !important;
     padding: 10px 10px !important;
+  }
+ 
+  /* Sinaliza que há mais itens de menu pra rolar (fade + seta) */
+  .topbar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 34px;
+    background: linear-gradient(to right, transparent, rgba(16, 0, 43, 0.97) 65%);
+    pointer-events: none;
+  }
+ 
+  .topbar-hint {
+    display: block !important;
+    position: absolute;
+    top: 50%;
+    right: 6px;
+    transform: translateY(-50%);
+    color: var(--accent-gold);
+    font-size: 1.1rem;
+    z-index: 2;
+    animation: hint-nudge 1.6s ease-in-out infinite;
+    pointer-events: none;
+  }
+ 
+  @keyframes hint-nudge {
+    0%, 100% { transform: translateY(-50%) translateX(0); opacity: 0.6; }
+    50% { transform: translateY(-50%) translateX(4px); opacity: 1; }
   }
  
   /* Reduz o exagero visual do topo no celular */
