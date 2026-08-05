@@ -167,27 +167,26 @@ h1.gothic-title {
   border-bottom: 2px solid var(--accent-gold);
   backdrop-filter: blur(4px);
 }
- 
-/* Indica visualmente que a barra rola horizontalmente no mobile */
-.topbar-hint {
-  display: none;
-}
- 
+
 .topbar ul {
   list-style: none !important;
   padding: 0 !important;
   margin: 0 auto !important;
   display: flex !important;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   gap: 4px;
   max-width: 1000px;
+  scrollbar-width: thin;
 }
- 
+
 .topbar li {
   list-style: none !important;
+  flex-shrink: 0;
 }
- 
+
 .topbar a {
   display: inline-block !important;
   font-family: var(--font-title);
@@ -204,6 +203,18 @@ h1.gothic-title {
   color: var(--accent-gold) !important;
   background: rgba(157, 78, 221, 0.25);
   border-bottom: 2px solid var(--accent-gold);
+}
+
+/* Sinaliza sutilmente que há mais itens pra rolar, em qualquer largura de tela */
+.topbar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 34px;
+  background: linear-gradient(to right, transparent, rgba(16, 0, 43, 0.97) 70%);
+  pointer-events: none;
 }
  
 /* Easter Egg Box */
@@ -234,7 +245,7 @@ h1.gothic-title {
   padding: 6px 16px;
   border-radius: 20px;
 }
- 
+
 .retro-badge-highlight {
   border: 2px solid var(--accent-gold);
   border-style: solid;
@@ -242,7 +253,7 @@ h1.gothic-title {
   background: rgba(255, 215, 0, 0.08);
   box-shadow: var(--glow-gold);
 }
- 
+
 .retro-badge-highlight:hover {
   background: rgba(255, 215, 0, 0.18);
 }
@@ -301,11 +312,11 @@ h1.gothic-title {
   padding: 15px 20px;
   border-radius: 0 8px 8px 0;
 }
- 
+
 .job-desc {
   text-align: justify;
 }
- 
+
 /* ===================================================
    SEÇÃO DE CONTATO
    =================================================== */
@@ -315,7 +326,7 @@ h1.gothic-title {
   align-items: center;
   gap: 6px;
 }
- 
+
 .contact-main-btn {
   font-size: 1.15rem !important;
   padding: 16px 28px !important;
@@ -323,7 +334,7 @@ h1.gothic-title {
   border: 2px solid var(--accent-gold) !important;
   box-shadow: var(--glow-gold);
 }
- 
+
 /* Contador de almas (agora no rodapé, após o countdown) */
 .hit-counter-wrap {
   display: flex;
@@ -784,79 +795,46 @@ summary.case-summary::-webkit-details-marker {
   
   .topbar ul {
     justify-content: flex-start !important;
-    overflow-x: auto !important;
-    flex-wrap: nowrap !important;
-    -webkit-overflow-scrolling: touch;
     scroll-snap-type: x proximity;
     padding-right: 30px !important;
   }
- 
+
   .topbar li {
     scroll-snap-align: start;
   }
- 
+
   .topbar a {
     font-size: 0.8rem !important;
     padding: 10px 10px !important;
   }
- 
-  /* Sinaliza que há mais itens de menu pra rolar (fade + seta) */
-  .topbar::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-    width: 34px;
-    background: linear-gradient(to right, transparent, rgba(16, 0, 43, 0.97) 65%);
-    pointer-events: none;
-  }
- 
-  .topbar-hint {
-    display: block !important;
-    position: absolute;
-    top: 50%;
-    right: 6px;
-    transform: translateY(-50%);
-    color: var(--accent-gold);
-    font-size: 1.1rem;
-    z-index: 2;
-    animation: hint-nudge 1.6s ease-in-out infinite;
-    pointer-events: none;
-  }
- 
-  @keyframes hint-nudge {
-    0%, 100% { transform: translateY(-50%) translateX(0); opacity: 0.6; }
-    50% { transform: translateY(-50%) translateX(4px); opacity: 1; }
-  }
- 
+
   /* Reduz o exagero visual do topo no celular */
   .moon-bg { display: none !important; }
- 
+
   .witch-emblem { font-size: 2.1rem !important; }
- 
+
   h1.gothic-title { font-size: 2rem !important; }
- 
+
   .tagline { font-size: 1.1rem !important; }
- 
+
   .sub-tagline { font-size: 0.95rem !important; }
- 
+
   .hit-counter { flex-wrap: wrap; justify-content: center; text-align: center; }
- 
+
   .hc-label { font-size: 0.85rem !important; }
- 
+
   .marquee-bar { font-size: 0.9rem !important; }
- 
+
   .section-title { font-size: 1.3rem !important; }
- 
+
   .panel { padding-left: 14px !important; padding-right: 14px !important; }
- 
+
   .timeline { padding-left: 20px !important; }
- 
+
   .moon-strip { gap: 8px !important; flex-wrap: wrap; }
- 
+
   .moon-phase { font-size: 1.2rem !important; }
- 
+
   body { font-size: 1.05rem; }
  
   /* Organiza perfeitamente os cases no celular */
@@ -1077,7 +1055,7 @@ a, button, summary, .tarot-card, .insert-coin, .retro-btn, .tab-btn {
   box-shadow: var(--glow-gold) !important;
   z-index: 5 !important;
 }
- 
+
 /* ===================================================
    ESTILOS DA SEÇÃO ALQUIMIA ESTRATÉGICA
    =================================================== */
@@ -1090,7 +1068,7 @@ a, button, summary, .tarot-card, .insert-coin, .retro-btn, .tab-btn {
   padding: 25px;
   box-shadow: var(--glow-purple);
 }
- 
+
 .alchemy-label {
   display: block;
   font-family: var(--font-title);
@@ -1098,7 +1076,7 @@ a, button, summary, .tarot-card, .insert-coin, .retro-btn, .tab-btn {
   font-size: 1.05rem;
   margin-bottom: 10px;
 }
- 
+
 .alchemy-select {
   width: 100%;
   background: rgba(8, 4, 18, 0.9);
@@ -1110,13 +1088,13 @@ a, button, summary, .tarot-card, .insert-coin, .retro-btn, .tab-btn {
   font-size: 1.1rem;
   cursor: pointer;
 }
- 
+
 .alchemy-select:focus {
   border-color: var(--accent-gold);
   outline: none;
   box-shadow: var(--glow-gold);
 }
- 
+
 .alchemy-result-card {
   background: rgba(8, 4, 18, 0.9);
   border: 1px solid var(--accent-gold);
@@ -1124,7 +1102,7 @@ a, button, summary, .tarot-card, .insert-coin, .retro-btn, .tab-btn {
   padding: 20px;
   text-align: left;
 }
- 
+
 .alchemy-disclaimer {
   font-size: 0.95rem;
   color: var(--text-muted);
@@ -1134,4 +1112,3 @@ a, button, summary, .tarot-card, .insert-coin, .retro-btn, .tab-btn {
   margin-top: 15px;
   line-height: 1.5;
 }
- 
