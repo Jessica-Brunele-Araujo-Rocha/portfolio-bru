@@ -709,7 +709,43 @@
       console.error('Falha ao carregar o vídeo. Verifique o caminho/arquivo em assets/.');
     });
   }
- 
+
+  // --- ADICIONE ESTAS LINHAS AQUI NO SEU INDEX.HTML ---
+  function toggleReelsPlayLuciani(event) {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    const video = document.getElementById('reelsVideoLuciani');
+    const box = document.getElementById('reelsPlayerBoxLuciani');
+    if (!video || !box) return;
+
+    if (video.paused || video.ended) {
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.then(() => {
+          video.setAttribute('controls', 'controls');
+          box.classList.add('playing');
+        }).catch(error => {
+          console.error("Erro ao reproduzir o Reels:", error);
+        });
+      }
+    } else {
+      video.pause();
+      box.classList.remove('playing');
+    }
+  }
+
+  const reelsVideoLucianiEl = document.getElementById('reelsVideoLuciani');
+  if (reelsVideoLucianiEl) {
+    reelsVideoLucianiEl.addEventListener('pause', function() {
+      document.getElementById('reelsPlayerBoxLuciani').classList.remove('playing');
+    });
+    reelsVideoLucianiEl.addEventListener('ended', function() {
+      document.getElementById('reelsPlayerBoxLuciani').classList.remove('playing');
+    });
+  }
+  // ----------------------------------------------------
 </script>
 </body>
 </html>
