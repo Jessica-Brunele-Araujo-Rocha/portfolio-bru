@@ -792,6 +792,27 @@ summary.case-summary::-webkit-details-marker {
   color: var(--text-main);
   font-family: var(--font-typewriter);
 }
+
+/* ===================================================
+   EFEITOS DE HOVER NOS BOTÕES E ELEMENTOS INTERATIVOS
+   =================================================== */
+.retro-btn:hover, 
+.tab-btn:hover, 
+.insert-coin:hover, 
+.custom-play-btn:hover,
+.accordion-icon:hover {
+  background-color: var(--accent-red) !important;
+  color: var(--text-main) !important;
+  box-shadow: var(--glow-red) !important;
+  border-color: var(--text-main) !important;
+  transform: translateY(-2px);
+  transition: all 0.25s ease-in-out;
+}
+
+summary.case-summary:hover {
+  background: rgba(121, 38, 36, 0.4) !important;
+  transition: background 0.25s ease-in-out;
+}
  
 /* Responsivo Mobile */
 @media (max-width: 768px) {
