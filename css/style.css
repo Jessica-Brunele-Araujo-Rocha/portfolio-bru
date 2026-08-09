@@ -1,25 +1,32 @@
 /* ===================================================
-   TEMA MÍSTICO & GÓTICO - BRU
+   ALQUEMINA — IDENTIDADE VISUAL SOTURNA & ALQUÍMICA
    =================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
 html {
   scroll-behavior: smooth;
 }
  
 :root {
-  --bg-color: #080412;
-  --panel-bg: rgba(18, 10, 36, 0.88);
-  --panel-border: #5a189a;
-  --accent-gold: #f7d070;
-  --accent-purple: #9d4edd;
-  --accent-magenta: #c77dff;
-  --accent-deep-violet: #240046;
-  --text-main: #e2e8f0;
-  --text-muted: #b8c0d6;
-  --glow-gold: 0 0 12px rgba(247, 208, 112, 0.5);
-  --glow-purple: 0 0 18px rgba(157, 78, 221, 0.6);
-  --font-title: 'Cinzel Decorative', 'Pirata One', serif;
-  --font-body: 'Cormorant Garamond', serif;
-  --font-retro: 'VT323', monospace;
+  /* Paleta Oficial Alquemina */
+  --bg-color: #080405;
+  --bg-dark: #100a0c;
+  --panel-bg: rgba(43, 0, 17, 0.88);       /* #2B0011 - Vinho Profundo */
+  --panel-border: #792624;                 /* #792624 - Vermelho Terroso */
+  --accent-red: #792624;                   /* #792624 - Vermelho Terroso */
+  --accent-wine: #2b0011;                  /* #2B0011 - Vinho Profundo */
+  --accent-chumbo: #372f2e;                /* #372F2E - Chumbo Quente */
+  --text-main: #e6e3e3;                    /* Texto principal com legibilidade */
+  --text-muted: #a9a6a6;                   /* #A9A6A6 - Cinza Névoa */
+  
+  /* Efeitos Glow/Neon */
+  --glow-red: 0 0 14px rgba(121, 38, 36, 0.7);
+  --glow-wine: 0 0 20px rgba(43, 0, 17, 0.9);
+  
+  /* Tipografia */
+  --font-title: 'Wei Rundgotisch Antique', 'Cinzel Decorative', serif;
+  --font-typewriter: 'Special Elite', monospace;
+  --font-body: 'Obra Letra', 'Cormorant Garamond', serif;
 }
  
 * {
@@ -42,12 +49,12 @@ body {
   position: fixed;
   top: 0; left: 0; width: 100%; height: 100%;
   background: 
-    radial-gradient(1.5px 1.5px at 10% 20%, #f7d070 100%, transparent),
-    radial-gradient(2px 2px at 20% 50%, #c77dff 100%, transparent),
+    radial-gradient(1.5px 1.5px at 10% 20%, #792624 100%, transparent),
+    radial-gradient(2px 2px at 20% 50%, #a9a6a6 100%, transparent),
     radial-gradient(1px 1px at 30% 70%, #ffffff 100%, transparent),
-    radial-gradient(2px 2px at 40% 10%, #f7d070 100%, transparent),
-    radial-gradient(1.5px 1.5px at 60% 80%, #9d4edd 100%, transparent),
-    radial-gradient(2px 2px at 75% 30%, #ffffff 100%, transparent);
+    radial-gradient(2px 2px at 40% 10%, #792624 100%, transparent),
+    radial-gradient(1.5px 1.5px at 60% 80%, #2b0011 100%, transparent),
+    radial-gradient(2px 2px at 75% 30%, #a9a6a6 100%, transparent);
   background-size: 100% 100%;
   z-index: -2;
 }
@@ -58,9 +65,9 @@ body {
   right: 5%;
   width: 180px;
   height: 180px;
-  background: radial-gradient(circle, #fffbe6 20%, #f7d070 50%, rgba(157, 78, 221, 0.1) 70%, transparent 80%);
+  background: radial-gradient(circle, #e6e3e3 10%, #792624 40%, rgba(43, 0, 17, 0.4) 70%, transparent 85%);
   border-radius: 50%;
-  box-shadow: 0 0 50px rgba(247, 208, 112, 0.3);
+  box-shadow: 0 0 50px rgba(121, 38, 36, 0.4);
   opacity: 0.25;
   pointer-events: none;
   z-index: -2;
@@ -69,18 +76,18 @@ body {
 .mist-overlay {
   position: fixed;
   top: 0; left: 0; width: 100%; height: 100%;
-  background: radial-gradient(circle at 50% 30%, rgba(36, 0, 70, 0.4) 0%, rgba(8, 4, 18, 0.95) 85%);
+  background: radial-gradient(circle at 50% 30%, rgba(43, 0, 17, 0.5) 0%, rgba(8, 4, 5, 0.96) 85%);
   pointer-events: none;
   z-index: -1;
 }
  
 /* Top Marquee */
 .marquee-bar {
-  background: #10002b;
-  border-bottom: 2px solid var(--accent-gold);
-  color: var(--accent-gold);
-  font-family: var(--font-retro);
-  font-size: 1.3rem;
+  background: var(--bg-dark);
+  border-bottom: 2px solid var(--accent-red);
+  color: var(--text-muted);
+  font-family: var(--font-typewriter);
+  font-size: 1.2rem;
   padding: 6px 0;
   overflow: hidden;
 }
@@ -108,26 +115,28 @@ body {
   display: flex;
   justify-content: center;
   gap: 20px;
+  color: var(--accent-red);
+  text-shadow: var(--glow-red);
 }
  
 h1.gothic-title {
   font-family: var(--font-title);
-  font-size: 2.8rem;
-  color: var(--accent-gold);
+  font-size: 3.2rem;
+  color: var(--text-main);
   margin: 10px 0;
-  text-shadow: var(--glow-gold), var(--glow-purple);
+  text-shadow: var(--glow-red);
 }
  
 .tagline {
-  font-style: italic;
-  font-size: 1.4rem;
-  color: var(--accent-magenta);
+  font-family: var(--font-typewriter);
+  font-size: 1.3rem;
+  color: var(--accent-red);
   margin-bottom: 20px;
 }
  
 .sub-tagline {
   font-size: 1.15rem;
-  color: var(--text-main);
+  color: var(--text-muted);
   margin-bottom: 15px;
 }
  
@@ -135,27 +144,28 @@ h1.gothic-title {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: rgba(16, 0, 43, 0.9);
-  border: 1px solid var(--accent-purple);
+  background: rgba(43, 0, 17, 0.9);
+  border: 1px solid var(--accent-red);
   padding: 6px 16px;
   border-radius: 20px;
 }
  
 .hc-label {
-  font-family: var(--font-retro);
-  font-size: 1.1rem;
-  color: var(--accent-gold);
+  font-family: var(--font-typewriter);
+  font-size: 1rem;
+  color: var(--text-muted);
 }
  
 .hc-digits {
-  font-family: var(--font-retro);
-  font-size: 1.5rem;
-  color: #39ff14;
+  font-family: var(--font-typewriter);
+  font-size: 1.4rem;
+  color: #ff3b30;
   letter-spacing: 3px;
   background: #000;
   padding: 2px 8px;
   border-radius: 4px;
-  border: 1px solid #39ff14;
+  border: 1px solid var(--accent-red);
+  text-shadow: 0 0 8px rgba(255, 59, 48, 0.8);
 }
  
 /* Barra de Navegação (topo, fixa) */
@@ -163,9 +173,9 @@ h1.gothic-title {
   position: sticky;
   top: 0;
   z-index: 40;
-  background: rgba(16, 0, 43, 0.96);
-  border-bottom: 2px solid var(--accent-gold);
-  backdrop-filter: blur(4px);
+  background: rgba(16, 10, 12, 0.96);
+  border-bottom: 2px solid var(--accent-red);
+  backdrop-filter: blur(6px);
 }
 
 .topbar ul {
@@ -189,9 +199,9 @@ h1.gothic-title {
 
 .topbar a {
   display: inline-block !important;
-  font-family: var(--font-title);
-  font-size: 0.95rem;
-  color: #f1e6ff !important;
+  font-family: var(--font-typewriter);
+  font-size: 0.9rem;
+  color: var(--text-muted) !important;
   text-decoration: none !important;
   padding: 12px 16px;
   white-space: nowrap;
@@ -200,12 +210,12 @@ h1.gothic-title {
 }
  
 .topbar a:hover {
-  color: var(--accent-gold) !important;
-  background: rgba(157, 78, 221, 0.25);
-  border-bottom: 2px solid var(--accent-gold);
+  color: var(--text-main) !important;
+  background: rgba(121, 38, 36, 0.3);
+  border-bottom: 2px solid var(--accent-red);
+  text-shadow: var(--glow-red);
 }
 
-/* Sinaliza sutilmente que há mais itens pra rolar, em qualquer largura de tela */
 .topbar::after {
   content: '';
   position: absolute;
@@ -213,49 +223,50 @@ h1.gothic-title {
   right: 0;
   height: 100%;
   width: 34px;
-  background: linear-gradient(to right, transparent, rgba(16, 0, 43, 0.97) 70%);
+  background: linear-gradient(to right, transparent, rgba(16, 10, 12, 0.97) 70%);
   pointer-events: none;
 }
  
-/* Easter Egg Box */
+/* Easter Egg Box & Badges */
 .egg-box {
   text-align: center;
   margin: 25px auto;
 }
  
 .insert-coin {
-  font-family: var(--font-title);
-  font-size: 1.1rem;
-  background: linear-gradient(135deg, #3c096c, #240046);
-  color: var(--accent-gold);
-  border: 2px solid var(--accent-gold);
+  font-family: var(--font-typewriter);
+  font-size: 1.05rem;
+  background: linear-gradient(135deg, #2b0011, #372f2e);
+  color: var(--text-main);
+  border: 1px solid var(--accent-red);
   padding: 12px 24px;
   border-radius: 8px;
   cursor: pointer;
+  box-shadow: var(--glow-red);
 }
  
 .retro-badge {
   display: inline-block;
   margin-top: 10px;
   text-decoration: none;
-  color: var(--accent-magenta);
-  font-family: var(--font-title);
-  font-size: 0.95rem;
-  border: 1px dashed var(--accent-purple);
+  color: var(--text-muted);
+  font-family: var(--font-typewriter);
+  font-size: 0.9rem;
+  border: 1px dashed var(--accent-red);
   padding: 6px 16px;
   border-radius: 20px;
 }
 
 .retro-badge-highlight {
-  border: 2px solid var(--accent-gold);
+  border: 2px solid var(--accent-red);
   border-style: solid;
-  color: var(--accent-gold);
-  background: rgba(255, 215, 0, 0.08);
-  box-shadow: var(--glow-gold);
+  color: var(--text-main);
+  background: rgba(121, 38, 36, 0.15);
+  box-shadow: var(--glow-red);
 }
 
 .retro-badge-highlight:hover {
-  background: rgba(255, 215, 0, 0.18);
+  background: rgba(121, 38, 36, 0.35);
 }
  
 /* Painéis */
@@ -267,17 +278,19 @@ h1.gothic-title {
   border-radius: 12px;
   padding: 30px;
   position: relative;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
 }
  
 .section-title {
   font-family: var(--font-title);
-  color: var(--accent-gold);
-  font-size: 2rem;
+  color: var(--text-main);
+  font-size: 2.2rem;
   text-align: center;
   margin-top: 0;
   margin-bottom: 25px;
-  border-bottom: 1px solid var(--accent-purple);
+  border-bottom: 1px solid var(--accent-red);
   padding-bottom: 10px;
+  text-shadow: var(--glow-red);
 }
  
 /* About & Work */
@@ -289,15 +302,21 @@ h1.gothic-title {
 }
  
 .retro-btn {
-  font-family: var(--font-title);
+  font-family: var(--font-typewriter);
   font-size: 0.95rem;
-  background: rgba(60, 9, 108, 0.8);
-  color: var(--accent-gold);
-  border: 1px solid var(--accent-gold);
-  padding: 10px 16px;
+  background: rgba(43, 0, 17, 0.9);
+  color: var(--text-main);
+  border: 1px solid var(--accent-red);
+  padding: 10px 18px;
   border-radius: 6px;
   text-decoration: none;
   display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.retro-btn:hover {
+  background: var(--accent-red);
+  box-shadow: var(--glow-red);
 }
  
 .job-list {
@@ -307,19 +326,24 @@ h1.gothic-title {
 }
  
 .job {
-  background: rgba(16, 0, 43, 0.6);
-  border-left: 3px solid var(--accent-gold);
-  padding: 15px 20px;
+  background: var(--accent-chumbo);
+  border-left: 4px solid var(--accent-red);
+  padding: 18px 22px;
   border-radius: 0 8px 8px 0;
+}
+
+.job h3 {
+  font-family: var(--font-typewriter);
+  color: var(--text-main);
+  margin-top: 0;
 }
 
 .job-desc {
   text-align: justify;
+  color: var(--text-muted);
 }
 
-/* ===================================================
-   SEÇÃO DE CONTATO
-   =================================================== */
+/* Contato */
 .contact-buttons {
   display: flex;
   flex-direction: column;
@@ -328,23 +352,20 @@ h1.gothic-title {
 }
 
 .contact-main-btn {
-  font-size: 1.15rem !important;
+  font-size: 1.1rem !important;
   padding: 16px 28px !important;
-  background: linear-gradient(135deg, rgba(255,215,0,0.18), rgba(157,78,221,0.25)) !important;
-  border: 2px solid var(--accent-gold) !important;
-  box-shadow: var(--glow-gold);
+  background: linear-gradient(135deg, rgba(121, 38, 36, 0.4), rgba(43, 0, 17, 0.8)) !important;
+  border: 2px solid var(--accent-red) !important;
+  box-shadow: var(--glow-red);
 }
 
-/* Contador de almas (agora no rodapé, após o countdown) */
 .hit-counter-wrap {
   display: flex;
   justify-content: center;
   margin: 10px 0 30px;
 }
  
-/* ===================================================
-   TIMELINE — O TEAR DA JORNADA
-   =================================================== */
+/* Timeline */
 .timeline {
   position: relative;
   display: flex;
@@ -360,8 +381,8 @@ h1.gothic-title {
   top: 6px;
   bottom: 6px;
   width: 2px;
-  background: linear-gradient(to bottom, var(--accent-gold), var(--accent-purple));
-  opacity: 0.6;
+  background: linear-gradient(to bottom, var(--accent-red), var(--accent-wine));
+  opacity: 0.7;
 }
  
 .timeline-item {
@@ -372,29 +393,30 @@ h1.gothic-title {
   position: absolute;
   left: -26px;
   top: 2px;
-  color: var(--accent-gold);
+  color: var(--accent-red);
   font-size: 0.9rem;
-  text-shadow: var(--glow-gold);
+  text-shadow: var(--glow-red);
 }
  
 .timeline-content {
-  background: rgba(16, 0, 43, 0.6);
-  border-left: 3px solid var(--accent-purple);
-  padding: 12px 18px;
+  background: var(--accent-chumbo);
+  border-left: 3px solid var(--accent-red);
+  padding: 14px 20px;
   border-radius: 0 8px 8px 0;
 }
  
 .timeline-content h3 {
   margin: 0 0 4px;
-  color: var(--accent-gold);
+  color: var(--text-main);
   font-family: var(--font-title);
-  font-size: 1.15rem;
+  font-size: 1.25rem;
 }
  
 .timeline-meta {
   margin: 0 0 4px;
-  color: var(--accent-magenta);
-  font-size: 1rem;
+  color: var(--accent-red);
+  font-family: var(--font-typewriter);
+  font-size: 0.95rem;
 }
  
 .timeline-desc {
@@ -404,9 +426,7 @@ h1.gothic-title {
   font-size: 0.95rem;
 }
  
-/* ===================================================
-   ACCORDION DE CASES & MINIATURA DE CAPA
-   =================================================== */
+/* Accordion Cases */
 .cases-container {
   display: flex;
   flex-direction: column;
@@ -414,8 +434,8 @@ h1.gothic-title {
 }
  
 .case-accordion {
-  background: rgba(16, 0, 43, 0.85);
-  border: 1px solid var(--accent-gold);
+  background: rgba(20, 10, 12, 0.9);
+  border: 1px solid var(--accent-red);
   border-radius: 12px;
   overflow: hidden;
 }
@@ -427,7 +447,7 @@ summary.case-summary {
   padding: 1.2rem 1.5rem !important;
   cursor: pointer;
   list-style: none;
-  background: rgba(24, 10, 36, 0.9);
+  background: var(--accent-wine);
 }
  
 summary.case-summary::-webkit-details-marker {
@@ -441,28 +461,29 @@ summary.case-summary::-webkit-details-marker {
 }
  
 .case-badge {
-  background: var(--accent-deep-violet);
-  color: var(--accent-gold);
-  font-family: var(--font-title);
+  background: var(--accent-chumbo);
+  color: var(--text-main);
+  font-family: var(--font-typewriter);
   font-size: 0.75rem;
   padding: 4px 12px;
   border-radius: 12px;
-  border: 1px solid var(--accent-purple);
+  border: 1px solid var(--accent-red);
   width: fit-content;
 }
  
 .case-title {
-  color: var(--accent-gold);
+  color: var(--text-main);
   font-family: var(--font-title);
   font-size: 1.4rem;
   margin: 0;
 }
  
 .accordion-icon {
-  font-family: var(--font-title);
+  font-family: var(--font-typewriter);
   font-size: 0.85rem;
-  color: var(--accent-gold);
-  border: 1px solid var(--accent-gold);
+  color: var(--text-main);
+  border: 1px solid var(--accent-red);
+  background: rgba(121, 38, 36, 0.2);
   padding: 6px 12px;
   border-radius: 6px;
   white-space: nowrap;
@@ -471,13 +492,12 @@ summary.case-summary::-webkit-details-marker {
  
 .case-body {
   padding: 1.5rem;
-  border-top: 1px dashed rgba(247, 208, 112, 0.3);
+  border-top: 1px dashed rgba(121, 38, 36, 0.4);
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.8rem;
 }
  
-/* MINIATURA DE CAPA NOS CARDS FECHADOS */
 .case-preview-wrapper {
   display: flex;
   align-items: center;
@@ -493,12 +513,12 @@ summary.case-summary::-webkit-details-marker {
   height: 55px;
   object-fit: cover;
   border-radius: 6px;
-  border: 1px solid var(--accent-gold);
-  box-shadow: var(--glow-purple);
+  border: 1px solid var(--accent-red);
+  box-shadow: var(--glow-red);
   display: block;
 }
  
-/* CARROSSEL INSTAGRAM */
+/* Carrossel Instagram */
 .case-gallery {
   display: flex;
   justify-content: center;
@@ -511,7 +531,7 @@ summary.case-summary::-webkit-details-marker {
   max-width: 320px;
   overflow: hidden;
   border-radius: 12px;
-  border: 1px solid var(--accent-gold);
+  border: 1px solid var(--accent-red);
   background: #000;
   margin: 0 auto;
 }
@@ -542,9 +562,9 @@ summary.case-summary::-webkit-details-marker {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(8, 4, 18, 0.8);
-  color: var(--accent-gold);
-  border: 1px solid var(--accent-gold);
+  background: rgba(8, 4, 5, 0.85);
+  color: var(--text-main);
+  border: 1px solid var(--accent-red);
   border-radius: 50%;
   width: 34px;
   height: 34px;
@@ -558,7 +578,7 @@ summary.case-summary::-webkit-details-marker {
 .nav-left { left: 8px; }
 .nav-right { right: 8px; }
  
-/* ORÁCULO INTERATIVO & TAROT */
+/* Oráculo & Tarot */
 .oracle-tabs {
   display: flex;
   justify-content: center;
@@ -567,10 +587,10 @@ summary.case-summary::-webkit-details-marker {
 }
  
 .tab-btn {
-  font-family: var(--font-title);
-  background: rgba(36, 0, 70, 0.8);
-  color: var(--accent-gold);
-  border: 1px solid var(--accent-gold);
+  font-family: var(--font-typewriter);
+  background: var(--accent-chumbo);
+  color: var(--text-muted);
+  border: 1px solid var(--accent-red);
   padding: 8px 16px;
   border-radius: 6px;
   cursor: pointer;
@@ -578,9 +598,9 @@ summary.case-summary::-webkit-details-marker {
 }
  
 .tab-btn.active, .tab-btn:hover {
-  background: var(--accent-purple);
-  color: #fff;
-  box-shadow: var(--glow-purple);
+  background: var(--accent-red);
+  color: var(--text-main);
+  box-shadow: var(--glow-red);
 }
  
 .tab-content {
@@ -623,7 +643,7 @@ summary.case-summary::-webkit-details-marker {
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  border: 1px solid var(--accent-gold);
+  border: 1px solid var(--accent-red);
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -634,20 +654,21 @@ summary.case-summary::-webkit-details-marker {
 }
  
 .card-front {
-  background: #120a24;
-  color: var(--accent-gold);
+  background: var(--accent-wine);
+  color: var(--text-main);
+  font-family: var(--font-typewriter);
 }
  
 .card-back {
-  background: #240046;
+  background: var(--accent-chumbo);
   color: var(--text-main);
   transform: rotateY(180deg);
   font-size: 0.8rem;
 }
  
 .tarot-result-box {
-  background: rgba(16, 0, 43, 0.9);
-  border: 1px solid var(--accent-gold);
+  background: var(--accent-wine);
+  border: 1px solid var(--accent-red);
   padding: 20px;
   border-radius: 8px;
   text-align: center;
@@ -665,23 +686,24 @@ summary.case-summary::-webkit-details-marker {
  
 .spell-display {
   margin-top: 15px;
-  background: rgba(16, 0, 43, 0.9);
-  border: 1px solid var(--accent-purple);
+  background: var(--accent-wine);
+  border: 1px solid var(--accent-red);
   padding: 15px;
   border-radius: 8px;
 }
  
 .spell-badge {
   display: inline-block;
-  background: var(--accent-deep-violet);
-  color: var(--accent-gold);
+  background: var(--accent-chumbo);
+  color: var(--text-main);
+  font-family: var(--font-typewriter);
   font-size: 0.8rem;
   padding: 3px 10px;
   border-radius: 10px;
   margin-bottom: 8px;
 }
  
-/* GUESTBOOK FORM */
+/* Formulário Grimório */
 .gb-form {
   display: flex;
   flex-direction: column;
@@ -691,8 +713,8 @@ summary.case-summary::-webkit-details-marker {
 }
  
 .gb-form input, .gb-form textarea {
-  background: rgba(16, 0, 43, 0.8);
-  border: 1px solid var(--accent-purple);
+  background: rgba(16, 10, 12, 0.9);
+  border: 1px solid var(--accent-red);
   color: var(--text-main);
   padding: 12px;
   border-radius: 6px;
@@ -702,9 +724,9 @@ summary.case-summary::-webkit-details-marker {
 }
  
 .gb-form input:focus, .gb-form textarea:focus {
-  border-color: var(--accent-gold);
+  border-color: var(--text-main);
   outline: none;
-  box-shadow: var(--glow-gold);
+  box-shadow: var(--glow-red);
 }
  
 .gb-list {
@@ -715,43 +737,46 @@ summary.case-summary::-webkit-details-marker {
 }
  
 .gb-list li {
-  background: rgba(16, 0, 43, 0.7);
-  border-left: 3px solid var(--accent-magenta);
+  background: var(--accent-chumbo);
+  border-left: 3px solid var(--accent-red);
   padding: 12px 18px;
   margin-bottom: 12px;
   border-radius: 0 6px 6px 0;
 }
  
-/* MOON STRIP & FOOTER */
+/* Moon Strip & Footer */
 .moon-strip {
   display: flex;
   justify-content: center;
   gap: 15px;
   font-size: 1.5rem;
   margin: 40px 0;
+  filter: grayscale(0.5);
 }
  
 .countdown-box {
   text-align: center;
   background: var(--panel-bg);
-  border: 1px solid var(--accent-purple);
+  border: 1px solid var(--accent-red);
   max-width: 600px;
   margin: 0 auto 40px auto;
   padding: 20px;
   border-radius: 12px;
+  box-shadow: var(--glow-red);
 }
  
 .countdown-title {
-  font-family: var(--font-title);
-  color: var(--accent-gold);
-  font-size: 1.1rem;
+  font-family: var(--font-typewriter);
+  color: var(--text-main);
+  font-size: 1.05rem;
 }
  
 .countdown-digits {
-  font-family: var(--font-retro);
+  font-family: var(--font-typewriter);
   font-size: 2rem;
-  color: #39ff14;
+  color: #ff3b30;
   margin: 10px 0;
+  text-shadow: 0 0 10px rgba(255, 59, 48, 0.7);
 }
  
 .countdown-sub {
@@ -762,8 +787,8 @@ summary.case-summary::-webkit-details-marker {
 .site-footer {
   text-align: center;
   padding: 30px 20px;
-  background: #05020a;
-  border-top: 1px solid var(--panel-border);
+  background: #040203;
+  border-top: 1px solid var(--accent-red);
   font-size: 0.95rem;
   color: var(--text-muted);
 }
@@ -777,17 +802,16 @@ summary.case-summary::-webkit-details-marker {
 }
  
 .badge {
-  background: rgba(36, 0, 70, 0.6);
-  border: 1px solid var(--accent-purple);
+  background: var(--accent-wine);
+  border: 1px solid var(--accent-red);
   padding: 4px 10px;
   border-radius: 12px;
   font-size: 0.8rem;
-  color: var(--accent-gold);
+  color: var(--text-main);
+  font-family: var(--font-typewriter);
 }
  
-/* ===================================================
-   RESPONSIVO E AJUSTES MOBILE (CELULAR) - BLINDADO
-   =================================================== */
+/* Ajustes Mobile (Celular) */
 @media (max-width: 768px) {
   .case-body { 
     grid-template-columns: 1fr !important; 
@@ -808,36 +832,23 @@ summary.case-summary::-webkit-details-marker {
     padding: 10px 10px !important;
   }
 
-  /* Reduz o exagero visual do topo no celular */
   .moon-bg { display: none !important; }
-
   .witch-emblem { font-size: 2.1rem !important; }
-
-  h1.gothic-title { font-size: 2rem !important; }
-
+  h1.gothic-title { font-size: 2.2rem !important; }
   .tagline { font-size: 1.1rem !important; }
-
   .sub-tagline { font-size: 0.95rem !important; }
 
   .hit-counter { flex-wrap: wrap; justify-content: center; text-align: center; }
-
   .hc-label { font-size: 0.85rem !important; }
-
   .marquee-bar { font-size: 0.9rem !important; }
-
-  .section-title { font-size: 1.3rem !important; }
-
+  .section-title { font-size: 1.4rem !important; }
   .panel { padding-left: 14px !important; padding-right: 14px !important; }
-
   .timeline { padding-left: 20px !important; }
-
   .moon-strip { gap: 8px !important; flex-wrap: wrap; }
-
   .moon-phase { font-size: 1.2rem !important; }
 
   body { font-size: 1.05rem; }
  
-  /* Organiza perfeitamente os cases no celular */
   summary.case-summary {
     flex-direction: column !important;
     align-items: stretch !important;
@@ -867,7 +878,6 @@ summary.case-summary::-webkit-details-marker {
     font-size: 0.65rem !important;
   }
  
-  /* Botão "CONJURAR CASE" alinhado e fluido no mobile */
   .accordion-icon {
     width: 100% !important;
     text-align: center !important;
@@ -875,7 +885,6 @@ summary.case-summary::-webkit-details-marker {
     margin-top: 5px !important;
   }
  
-  /* Corrige a quebra dos botões na seção Sobre */
   .btn-group {
     display: flex !important;
     flex-direction: column !important;
@@ -901,16 +910,12 @@ summary.case-summary::-webkit-details-marker {
   }
 }
  
-/* ===================================================
-   CURSOR DE MORCEGO NO HOVER
-   =================================================== */
+/* Cursor */
 a, button, summary, .tarot-card, .insert-coin, .retro-btn, .tab-btn {
-  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24'><path fill='%23f7d070' d='M12 2c-.5 0-1 .2-1.4.6L8 5.2C6.2 4.4 4 5 3 6.8c-.8 1.4-.4 3.2.9 4.2-.6.8-1 1.8-1 2.8 0 2.2 1.8 4 4 4h1.2c.4 1.7 1.8 3 3.8 3s3.4-1.3 3.8-3H16c2.2 0 4-1.8 4-4 0-1-.4-2-1-2.8 1.3-1 1.7-2.8.9-4.2-1-1.8-3.2-2.4-5-1.6l-2.6-2.6c-.4-.4-.9-.6-1.4-.6z'/></svg>"), pointer !important;
+  cursor: pointer !important;
 }
  
-/* ===================================================
-   CORREÇÃO DO PLAYER DE VÍDEO (REELS)
-   =================================================== */
+/* Player de Vídeo e Reels */
 .instagram-carousel video {
   width: 100% !important;
   max-height: 480px !important;
@@ -918,17 +923,8 @@ a, button, summary, .tarot-card, .insert-coin, .retro-btn, .tab-btn {
   object-fit: contain !important;
   background: #000 !important;
   display: block !important;
-  cursor: pointer !important;
 }
- 
-/* Força a exibição dos controlos nativos */
-.instagram-carousel video::-webkit-media-controls {
-  display: flex !important;
-}
- 
-/* ===================================================
-   PLAYER DE REELS CUSTOMIZADO COM BOTÃO DE PLAY MÍSTICO
-   =================================================== */
+
 .reels-container {
   position: relative;
   width: 100%;
@@ -936,9 +932,9 @@ a, button, summary, .tarot-card, .insert-coin, .retro-btn, .tab-btn {
   background: #000;
   border-radius: 12px;
   overflow: hidden;
-  border: 1px solid var(--accent-gold);
+  border: 1px solid var(--accent-red);
   margin: 0 auto;
-  box-shadow: var(--glow-purple);
+  box-shadow: var(--glow-red);
 }
  
 .reels-container video {
@@ -949,7 +945,6 @@ a, button, summary, .tarot-card, .insert-coin, .retro-btn, .tab-btn {
   cursor: pointer;
 }
  
-/* Botão de Play centralizado estilo player de vídeo místico */
 .custom-play-btn {
   position: absolute;
   top: 50%;
@@ -957,24 +952,23 @@ a, button, summary, .tarot-card, .insert-coin, .retro-btn, .tab-btn {
   transform: translate(-50%, -50%);
   width: 60px;
   height: 60px;
-  background: rgba(36, 0, 70, 0.85);
-  border: 2px solid var(--accent-gold);
+  background: rgba(43, 0, 17, 0.85);
+  border: 2px solid var(--accent-red);
   border-radius: 50%;
-  color: var(--accent-gold);
+  color: var(--text-main);
   font-size: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: var(--glow-gold);
+  box-shadow: var(--glow-red);
   transition: all 0.3s ease;
   z-index: 10;
   padding-left: 4px;
 }
  
 .custom-play-btn:hover {
-  background: var(--accent-purple);
-  color: #fff;
+  background: var(--accent-red);
   transform: translate(-50%, -50%) scale(1.1);
 }
  
@@ -983,28 +977,15 @@ a, button, summary, .tarot-card, .insert-coin, .retro-btn, .tab-btn {
   pointer-events: none;
 }
  
-/* ===================================================
-   ETIQUETA ACIMA DO TÍTULO (contexto rápido do site)
-   =================================================== */
-.eyebrow-label{
-  font-family: 'VT323', monospace;
-  font-size: 15px;
+.eyebrow-label {
+  font-family: var(--font-typewriter);
+  font-size: 14px;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: var(--accent-gold);
-  opacity: 0.85;
+  color: var(--accent-red);
+  opacity: 0.9;
   margin: 0 0 6px;
   text-align: center;
-}
- 
-/* ===================================================
-   MOLDURA E POSICIONAMENTO DA FOTO DE PERFIL
-   =================================================== */
-.about-card {
-  display: flex;
-  gap: 30px;
-  align-items: center;
-  flex-wrap: wrap;
 }
  
 .photo-frame {
@@ -1014,8 +995,8 @@ a, button, summary, .tarot-card, .insert-coin, .retro-btn, .tab-btn {
   margin: 0 auto !important;
   border-radius: 50% !important;
   padding: 4px !important;
-  background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple)) !important;
-  box-shadow: var(--glow-gold), var(--glow-purple) !important;
+  background: linear-gradient(135deg, var(--accent-red), var(--accent-wine)) !important;
+  box-shadow: var(--glow-red) !important;
   flex-shrink: 0 !important;
   display: flex !important;
   align-items: center !important;
@@ -1044,7 +1025,7 @@ a, button, summary, .tarot-card, .insert-coin, .retro-btn, .tab-btn {
   bottom: 5px !important;
   right: 10px !important;
   background: var(--bg-color) !important;
-  border: 1px solid var(--accent-gold) !important;
+  border: 1px solid var(--accent-red) !important;
   border-radius: 50% !important;
   width: 32px !important;
   height: 32px !important;
@@ -1052,35 +1033,33 @@ a, button, summary, .tarot-card, .insert-coin, .retro-btn, .tab-btn {
   align-items: center !important;
   justify-content: center !important;
   font-size: 0.9rem !important;
-  box-shadow: var(--glow-gold) !important;
+  box-shadow: var(--glow-red) !important;
   z-index: 5 !important;
 }
 
-/* ===================================================
-   ESTILOS DA SEÇÃO ALQUIMIA ESTRATÉGICA
-   =================================================== */
+/* Alquimia Estratégica Box */
 .alchemy-box {
   max-width: 650px;
   margin: 0 auto;
-  background: rgba(16, 0, 43, 0.75);
-  border: 1px solid var(--accent-purple);
+  background: var(--accent-chumbo);
+  border: 1px solid var(--accent-red);
   border-radius: 12px;
   padding: 25px;
-  box-shadow: var(--glow-purple);
+  box-shadow: var(--glow-red);
 }
 
 .alchemy-label {
   display: block;
   font-family: var(--font-title);
-  color: var(--accent-gold);
-  font-size: 1.05rem;
+  color: var(--text-main);
+  font-size: 1.1rem;
   margin-bottom: 10px;
 }
 
 .alchemy-select {
   width: 100%;
-  background: rgba(8, 4, 18, 0.9);
-  border: 1px solid var(--accent-purple);
+  background: rgba(8, 4, 5, 0.95);
+  border: 1px solid var(--accent-red);
   color: var(--text-main);
   padding: 12px;
   border-radius: 6px;
@@ -1090,14 +1069,14 @@ a, button, summary, .tarot-card, .insert-coin, .retro-btn, .tab-btn {
 }
 
 .alchemy-select:focus {
-  border-color: var(--accent-gold);
+  border-color: var(--text-main);
   outline: none;
-  box-shadow: var(--glow-gold);
+  box-shadow: var(--glow-red);
 }
 
 .alchemy-result-card {
-  background: rgba(8, 4, 18, 0.9);
-  border: 1px solid var(--accent-gold);
+  background: rgba(8, 4, 5, 0.95);
+  border: 1px solid var(--accent-red);
   border-radius: 8px;
   padding: 20px;
   text-align: left;
@@ -1107,7 +1086,7 @@ a, button, summary, .tarot-card, .insert-coin, .retro-btn, .tab-btn {
   font-size: 0.95rem;
   color: var(--text-muted);
   font-style: italic;
-  border-left: 2px solid var(--accent-gold);
+  border-left: 2px solid var(--accent-red);
   padding-left: 12px;
   margin-top: 15px;
   line-height: 1.5;
