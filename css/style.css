@@ -823,7 +823,13 @@ summary.case-summary::-webkit-details-marker {
   .hit-counter { flex-wrap: wrap; justify-content: center; text-align: center; }
   .hc-label { font-size: 0.85rem !important; }
   .marquee-bar { font-size: 0.9rem !important; }
-  .section-title { font-size: 1.4rem !important; }
+  .section-title {
+    font-size: 1.15rem !important;
+    line-height: 1.3 !important;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+    white-space: normal !important;
+  }
   .panel { padding-left: 14px !important; padding-right: 14px !important; }
   .timeline { padding-left: 20px !important; }
   .moon-strip { gap: 8px !important; flex-wrap: wrap; }
