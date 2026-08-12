@@ -392,7 +392,7 @@
     </details>
 
     <!-- CASE 7: PAUTA QUENTE & SEO (LISANDRA) -->
-    <details class="case-accordion">
+    <details class="case-accordion" id="case-chatgpt">
       <summary class="case-summary">
         <div class="case-preview-wrapper">
           <div class="case-preview-img">
@@ -798,6 +798,16 @@
       document.getElementById('reelsPlayerBox').classList.remove('playing');
     });
   }
+ // Abre e foca no case específico se houver uma âncora na URL
+  window.addEventListener('DOMContentLoaded', () => {
+    if (window.location.hash) {
+      const targetElement = document.querySelector(window.location.hash);
+      if (targetElement && targetElement.tagName === 'DETAILS') {
+        targetElement.open = true;
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  });
 </script>
 </body>
 </html>
